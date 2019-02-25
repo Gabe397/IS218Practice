@@ -1,0 +1,7 @@
+{
+    "name": "gabe3/is218practice",
+    "require-dev": {
+        "php": "^7.3"
+    },
+    "require": {}
+}
