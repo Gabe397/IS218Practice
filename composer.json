@@ -1,7 +1,11 @@
 {
     "name": "gabe3/is218practice",
-    "require-dev": {
-        "php": "^7.3"
+    "require": {
+        "phpunit/phpunit": "^8.0"
     },
-    "require": {}
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
 }
