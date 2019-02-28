@@ -8,7 +8,7 @@
 
 class File
 {
-    public static function readCSVIntoArray(string $fileName):array
+    public static function readCSVIntoArray(string $fileName,string $class):array
     {
         $records = Array();
         $count = 0;

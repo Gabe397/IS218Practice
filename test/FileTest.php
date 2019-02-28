@@ -34,12 +34,15 @@ class FileTest extends TestCase
     }
 
     public function testReadCSVIntoArrayReturnsArray(): void{
-        $file = new File();
-        $var = $file->readCSVIntoArray("data\data.csv");
+        $var = File::readCSVIntoArray("data/data.csv", 'Car');
         $this-> assertTrue(
             gettype($var)==array()
         );
+
+        print_r($var);
     }
+
+
 
 
 
