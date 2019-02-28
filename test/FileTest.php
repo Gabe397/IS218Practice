@@ -33,6 +33,16 @@ class FileTest extends TestCase
         );
     }
 
+    public function testReadCSVIntoArrayReturnsArray(): void{
+        $file = new File();
+        $var = $file->readCSVIntoArray("data\data.csv");
+        $this-> assertTrue(
+            gettype($var)==array()
+        );
+    }
+
+
+
 
 
 
