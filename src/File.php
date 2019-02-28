@@ -16,7 +16,7 @@ class File
 
         if(($handle = fopen("$fileName",'r')) !== FALSE)
         {
-            while(($row = fgetcsv(handle,1000,",")) != FALSE)
+            while(($row = fgetcsv($handle,1000,",")) != FALSE)
             {
                 if($count == 0)
                 {
