@@ -22,7 +22,7 @@ final class Email
         return $this->email;
     }
 
-    private function ensureIsValidEmail(string $email): void
+    public function ensureIsValidEmail(string $email): void
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new InvalidArgumentException(
@@ -33,5 +33,7 @@ final class Email
             );
         }
     }
+
+
 }
 
