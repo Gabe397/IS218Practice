@@ -35,7 +35,7 @@ class FileTest extends TestCase
 
 
     public function testReadCSVIntoArrayReturnsArray(): void{
-        $var = File::readCSVIntoArray("data/data.csv", 'Car');
+        $var = File::readCSVIntoArray("data/data.csv");
         $this-> assertTrue(
             gettype($var)==gettype(array())
         );
