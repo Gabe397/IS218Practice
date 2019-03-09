@@ -8,6 +8,30 @@
 
 class htmlTags
 {
-    public static function table(){}
+    public static function table($text)
+    {
+        return '<table class="table">'. $text . '</table>';
+    }
+
+    public static function tableHead($text)
+    {
+        return '<thead>' .$text. '</thead>';
+    }
+
+    public static function tableRow($text)
+    {
+        return '<tr>' .$text. '</tr>';
+    }
+
+    public static function tHeaderColumn($text)
+    {
+        return '<th scope = "col">' .$text. '</th>';
+    }
+
+    public static function tHeaderRow($text)
+    {
+        return '<th scope = "row">' .$text. '</th>';
+    }
+
 
 }
