@@ -51,5 +51,21 @@ class htmlTags
         return '<th scope = "row">' .$text. '</th>';
     }
 
+    public static function rowEntry($text)
+    {
+        return '<td>' .$text. '</td>';
+    }
+
+    public static function tableBodyStart()
+    {
+        return '<tbody>';
+    }
+
+    public static function tableBodyEnd()
+    {
+        return '</tbody>';
+    }
+
+
 
 }
