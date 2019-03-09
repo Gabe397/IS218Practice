@@ -13,10 +13,14 @@ class main
 
     public function __construct()
     {
-        //Write a function for the columns
+        //Write a function for the columns, function that is a for loop that will run until there is no more keys in the array
+        //The problem with this is that if we have more than 3 columns in the csv it will fail. So we need to make VVVV this part calling the array keys dynamic.
 
-        $this->html .= htmlTags::tableStart( htmlTags::tableHead(htmlTags::tableRow(htmlTags::tHeaderColumn("Hello","yellow","fellow"))));
-        //A for Loop for the Rows maybe a function
+        $this->html .= htmlTags::tableStart( htmlTags::tableHead(htmlTags::tableRow(htmlTags::tHeaderColumn("Hello","yellow","bellow"))));
+
+        //A for Loo
+
+
         $this ->html .= htmlTags::tableEnd();
 
     }

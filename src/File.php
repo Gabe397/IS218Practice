@@ -24,6 +24,7 @@ class File
                 }
                 else{
                     $records[] = (object) array_combine($fieldName,$row);
+                    //REPLACE THIS WITH A FACTORY, NEED THE FACTORY IN ORDER TO DO THE TABLE DYNAMICALLY.
                 }
                 $count++;
 
