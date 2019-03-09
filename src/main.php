@@ -70,20 +70,15 @@
 </main><!-- /.container -->
 
 <div>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
-        </thead>
-        <tbody>
+    <?php
+        //include(".php");
 
-        </tbody>
-    </table>
+        //$var = File::readCSVIntoArray("..\data\data.csv",'Car');
+        //echo loadTable();
+    ?>
+
 </div>
+
 
 <div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
