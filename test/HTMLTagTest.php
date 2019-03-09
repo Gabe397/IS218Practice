@@ -11,5 +11,5 @@ use PHPUnit\Framework\TestCase;
 
 class HTMLTagTest extends TestCase
 {
-
+    //ADD 1 TEST FOR EACH FUNCTION
 }
