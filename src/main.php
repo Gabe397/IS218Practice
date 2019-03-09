@@ -35,8 +35,6 @@ class main
         $this ->html .= htmlTags::tableRowStart();
 
         for ($x = 0; $x < count($var); $x++) {
-
-
             $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
         }
 
@@ -45,10 +43,12 @@ class main
 
         $this ->html .= htmlTags::tableBodyStart();
 
+        //Broken
         for ($y = 0; $y < count($var); $y++) {
             $this ->html .= htmlTags::tableRowStart();
-            for ($z = 0; $z < count($var) ; $z++) {
-                $this->html .= htmlTags::rowEntry($var[$z] -> $keys[0]);
+            for ($z = 0; $z < count($var) ; ++$z) {
+                $hold = $keys[$z];
+                $this->html .= htmlTags::rowEntry(($var[$z] -> $hold));
             }
 
 
