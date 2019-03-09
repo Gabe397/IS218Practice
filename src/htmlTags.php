@@ -8,5 +8,6 @@
 
 class htmlTags
 {
+    public static function table(){}
 
 }
