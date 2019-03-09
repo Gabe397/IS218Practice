@@ -43,5 +43,13 @@ class FileTest extends TestCase
         print_r($var);
     }
 
+    public function testMainConstruct(): void{
+        $this -> assertTrue(
+          !method_exists(main::class,'__construct')
+         );
+}
+
+
+
 
 }
