@@ -13,8 +13,10 @@ class main
 
     public function __construct()
     {
-        $this->html .= htmlTags::tableStart( htmlTags::tableHead(htmlTags::tableRow(htmlTags::tHeaderColumn("Hello","yellow","fellow"))));
+        //Write a function for the columns
 
+        $this->html .= htmlTags::tableStart( htmlTags::tableHead(htmlTags::tableRow(htmlTags::tHeaderColumn("Hello","yellow","fellow"))));
+        //A for Loop for the Rows maybe a function
         $this ->html .= htmlTags::tableEnd();
 
     }
