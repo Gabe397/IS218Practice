@@ -8,9 +8,9 @@
 
 class htmlTags
 {
-    public static function tableStart($text)
+    public static function tableStart()
     {
-        return '<table class="table">'. $text ;
+        return '<table class="table">';
     }
 
     public static function tableEnd()
@@ -18,20 +18,31 @@ class htmlTags
         return '</table>';
     }
 
-    public static function tableHead($text)
+    public static function tableHeadStart()
     {
-        return '<thead>' .$text. '</thead>';
+        return '<thead>';
     }
 
-    public static function tableRow($text)
+    public static function tableHeadEnd()
     {
-        return '<tr>' .$text. '</tr>';
+        return '</thead>';
     }
 
-    public static function tHeaderColumn($text1,$text2,$text3)
+
+    public static function tableRowStart()
+    {
+        return '<tr>';
+    }
+
+    public static function tableRowEnd()
+    {
+        return '</tr>';
+    }
+
+    public static function tHeaderColumn($text)
     {
         //MAKE THIS DYNAMICALLY BE ABLE TO TAKE IN AS MUCH COLUMNS AS IT WANTS
-        return '<th scope = "col">' .$text1. '</th>'     .'<th scope = "col">' .$text2. '</th>'.    '<th scope = "col">' .$text3. '</th>';
+        return '<th scope = "col">' .$text. '</th>';
     }
 
     public static function tHeaderRow($text)
