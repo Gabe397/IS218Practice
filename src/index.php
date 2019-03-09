@@ -71,10 +71,10 @@
 
 <div>
     <?php
-        //include(".php");
+        include("main.php");
 
         //$var = File::readCSVIntoArray("..\data\data.csv",'Car');
-        //echo loadTable();
+        new main();
     ?>
 
 </div>
