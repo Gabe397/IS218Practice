@@ -13,7 +13,7 @@ class FileTest extends TestCase
     public function testFileInstantiate(): void
     {
         $file = new File();
-        $this-> assertInstanceOf(File::class,$file);
+       // $this-> assertInstanceOf(File::class,$file);
     }
 
     public function testCSVExists() :void
@@ -33,7 +33,6 @@ class FileTest extends TestCase
         );
     }
 
-
     public function testReadCSVIntoArrayReturnsArray(): void{
         $var = File::readCSVIntoArray("data/data.csv",'Car');
         $this-> assertTrue(
@@ -49,7 +48,25 @@ class FileTest extends TestCase
          );
 }
 
+    public function testTableStart(): void{
+        $this -> assertTrue(
+            htmlTags::tableStart() == '<table class="table">'
+        );
+    }
 
+    public function testTableEnd(): void{
+        $this -> assertTrue(
+            htmlTags::tableEnd() == '</table>'
+        );
+    }
+
+    public function tableHeadStart(): void{
+        $this -> assertTrue(
+            htmlTags::tableHeadStart() == '<head>'
+        );
+    }
+
+    
 
 
 }

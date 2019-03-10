@@ -66,6 +66,4 @@ class htmlTags
         return '</tbody>';
     }
 
-
-
 }
