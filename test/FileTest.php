@@ -40,7 +40,9 @@ class FileTest extends TestCase
             gettype($var)==gettype(array())
         );
 
-        print_r($var);
+
+
+        print_r($var[1]);
     }
 
     public function testMainConstruct(): void{
