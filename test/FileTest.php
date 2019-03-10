@@ -46,7 +46,7 @@ class FileTest extends TestCase
 
     public function testMainConstruct(): void{
         $this -> assertTrue(
-          !method_exists(main::class,'__construct')
+          method_exists(main::class,'__construct')
          );
 }
 
