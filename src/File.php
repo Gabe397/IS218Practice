@@ -22,6 +22,7 @@ class File
                 {
                     $fieldName = $row;
                 }
+
                 else{
                     $recordsArray[] =(object)recFactory::Build($fieldName,$row);
                 }
