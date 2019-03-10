@@ -60,13 +60,18 @@ class FileTest extends TestCase
         );
     }
 
-    public function tableHeadStart(): void{
+    public function testTableHeadStart(): void{
         $this -> assertTrue(
-            htmlTags::tableHeadStart() == '<head>'
+            htmlTags::tableHeadStart() == '<thead>'
+        );
+    }
+
+    public function testTableHeadEnd(): void{
+        $this -> assertTrue(
+            htmlTags::tableHeadEnd() == '</thead>'
         );
     }
 
     
-
 
 }
