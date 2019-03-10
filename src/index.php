@@ -71,9 +71,7 @@
 
 <div>
     <?php
-        include("main.php");
-
-        //$var = File::readCSVIntoArray("..\data\data.csv",'Car');
+        include_once ("Classes.php");
         new main();
     ?>
 
