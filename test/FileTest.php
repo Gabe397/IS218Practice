@@ -6,6 +6,7 @@
  * Time: 6:46 PM
  */
 declare(strict_types=1);
+
 use PHPUnit\Framework\TestCase;
 
 class FileTest extends TestCase
@@ -40,9 +41,7 @@ class FileTest extends TestCase
             gettype($var)==gettype(array())
         );
 
-
-
-        print_r($var[1]);
+        print_r($var);
     }
 
     public function testMainConstruct(): void{
