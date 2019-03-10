@@ -6,7 +6,11 @@
  * Time: 1:42 AM
  */
 
-class recFactory
-{
 
+abstract class recFactory
+{
+    public static function Build($fieldName, $row)
+    {
+        return ArrayFunctions::combineArray($fieldName, $row);
+    }
 }
