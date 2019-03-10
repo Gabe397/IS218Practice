@@ -9,6 +9,8 @@ include "recFactory.php";
 include "ArrayFunctions.php";
 include "htmlTags.php";
 include "File.php";
+include "main.php";
+include "record.php";
 class Classes
 {
 
