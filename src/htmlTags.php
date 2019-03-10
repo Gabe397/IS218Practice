@@ -66,4 +66,9 @@ class htmlTags
         return '</tbody>';
     }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
 }

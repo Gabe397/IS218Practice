@@ -59,6 +59,11 @@ class main
         $this ->html .= htmlTags::tableEnd();
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
     }
 
 
