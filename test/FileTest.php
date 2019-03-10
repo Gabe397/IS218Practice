@@ -84,5 +84,11 @@ class FileTest extends TestCase
         );
     }
 
+    public function testRowEntry(): void{
+        $var = "Test";
+        $this -> assertTrue(
+            htmlTags::rowEntry($var) == '<td>' .$var. '</td>'
+        );
+    }
 
 }
