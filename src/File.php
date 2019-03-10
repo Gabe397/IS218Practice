@@ -8,9 +8,9 @@
 
 class File
 {
-    public static function readCSVIntoArray(string $fileName,string $class):array
+    public static function readCSVIntoArray(string $fileName):array
     {
-        $records = Array();
+        $recordsArray = Array();
         $count = 0;
         $fieldName = '';
 
@@ -23,16 +23,13 @@ class File
                     $fieldName = $row;
                 }
                 else{
-                    $records[] = recFactory::Build($fieldName,$row);
-
-                    //$records[] = recFactory::Build($fieldName,$row)
-                    //REPLACE THIS WITH A FACTORY, NEED THE FACTORY IN ORDER TO DO THE TABLE DYNAMICALLY.
+                    $recordsArray[] =(object)recFactory::Build($fieldName,$row);
                 }
                 $count++;
 
             }
             fclose($handle);
         }
-        return $records;
+        return $recordsArray;
     }
 }
