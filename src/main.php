@@ -59,8 +59,6 @@ class main
         $this ->html .= htmlTags::tableEnd();
 
 
-
-
     }
 
 
