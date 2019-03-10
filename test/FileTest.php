@@ -78,7 +78,11 @@ class FileTest extends TestCase
         );
     }
 
-    
+    public function testTableRowEnd(): void{
+        $this -> assertTrue(
+            htmlTags::tableRowEnd() == '</tr>'
+        );
+    }
 
 
 }
