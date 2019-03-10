@@ -42,12 +42,11 @@ class main
 
         $this ->html .= htmlTags::tableBodyStart();
 
-        //Broken
         for ($y = 0; $y < count($var); $y++) {
             $this ->html .= htmlTags::tableRowStart();
-            for ($z = 0; $z < count($var) ; ++$z) {
+            for ($z = 0; $z < count($var) ; $z++) {
                 $hold = $keys[$z];
-                $this->html .= htmlTags::rowEntry(($var));
+                $this->html .= htmlTags::rowEntry(($var[$y]->$hold));
             }
 
 
