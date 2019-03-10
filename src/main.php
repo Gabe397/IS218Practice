@@ -5,8 +5,7 @@
  * Date: 3/9/2019
  * Time: 3:15 AM
  */
-include('htmlTags.php');
-include('File.php');
+
 
 class main
 {
@@ -48,7 +47,7 @@ class main
             $this ->html .= htmlTags::tableRowStart();
             for ($z = 0; $z < count($var) ; ++$z) {
                 $hold = $keys[$z];
-                $this->html .= htmlTags::rowEntry(($var[$z] -> $hold));
+                $this->html .= htmlTags::rowEntry(($var));
             }
 
 
