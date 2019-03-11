@@ -66,16 +66,19 @@ class htmlTags
         return '</tbody>';
     }
 
-    public static function printBeginOfTable (): void{
-        print (htmlTags::tableStart() . htmlTags::tableHeadStart() . htmlTags::tableRowStart());
+    public static function printBeginOfTable (): string {
+        $var = htmlTags::tableStart() . htmlTags::tableHeadStart() . htmlTags::tableRowStart();
+        return $var;
     }
 
-    public static function printRowEndBodyStartForTable (): void{
-        print (htmlTags::tableRowEnd() . htmlTags::tableHeadEnd() . htmlTags::tableBodyStart());
+    public static function printRowEndBodyStartForTable (): string{
+        $var = htmlTags::tableRowEnd() . htmlTags::tableHeadEnd() . htmlTags::tableBodyStart();
+        return $var;
     }
 
-    public static function printTableBodyEndAndWholeTableEnd (): void{
-        print (htmlTags::tableBodyEnd() . htmlTags::tableEnd());
+    public static function printTableBodyEndAndWholeTableEnd (): string{
+        $var = htmlTags::tableBodyEnd() . htmlTags::tableEnd();
+        return $var;
     }
 
 
