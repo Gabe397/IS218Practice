@@ -34,6 +34,7 @@ class main
 
         htmlTags::printRowEndBodyStartForTable();
 
+
         for ($y = 0; $y < count($var); $y++) {
             $this ->html .= htmlTags::tableRowStart();
             for ($z = 0; $z < count($keys) ; $z++) {
@@ -44,9 +45,10 @@ class main
             $this -> html.= htmlTags::tableRowEnd();
        }
 
-        htmlTags::printTableBodyEndAndWholeTableEnd();
+
 
     }
+
 
     public function __destruct()
     {
