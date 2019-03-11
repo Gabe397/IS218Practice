@@ -41,13 +41,12 @@ class htmlTags
 
     public static function tHeaderColumn($text)
     {
-        //MAKE THIS DYNAMICALLY BE ABLE TO TAKE IN AS MUCH COLUMNS AS IT WANTS
         return '<th scope = "col">' .$text. '</th>';
     }
 
     public static function tHeaderRow($text)
     {
-        //MAKE THIS DYNAMICALLY BE ABLE TO TAKE IN AS MUCH ROWS AS IT WANTS
+
         return '<th scope = "row">' .$text. '</th>';
     }
 
