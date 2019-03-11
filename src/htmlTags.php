@@ -66,5 +66,8 @@ class htmlTags
         return '</tbody>';
     }
 
+    public function thisHtml(): string{
+        return '$this -> html';
+    }
 
 }

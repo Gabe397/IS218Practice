@@ -52,17 +52,10 @@ class main
             $this -> html.= htmlTags::tableRowEnd();
        }
 
-
-
-
-
         $this ->html .= htmlTags::tableBodyEnd();
         $this ->html .= htmlTags::tableEnd();
 
     }
-
-
-
 
 
     public function __destruct()
