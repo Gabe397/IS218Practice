@@ -32,9 +32,7 @@ class main
             $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
         }
 
-        $this ->html .= htmlTags::tableRowEnd();
-        $this ->html .= htmlTags::tableHeadEnd();
-        $this ->html .= htmlTags::tableBodyStart();
+        htmlTags::printRowEndBodyStartForTable();
 
 
         for ($y = 0; $y < count($var); $y++) {
