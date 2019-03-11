@@ -70,5 +70,9 @@ class htmlTags
         print (htmlTags::tableStart() . htmlTags::tableHeadStart() . htmlTags::tableRowStart());
     }
 
+    public static function printRowEndBodyStartForTable (): void{
+        print (htmlTags::tableRowEnd() . htmlTags::tableHeadEnd() . htmlTags::tableBodyStart());
+    }
+
 
 }

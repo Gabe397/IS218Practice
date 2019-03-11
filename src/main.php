@@ -25,9 +25,6 @@ class main
         $keys = array_keys((array)$var[0]);
 
 
-        //$this->insert(htmlTags::tableStart());
-
-
         htmlTags::printBeginOfTable();
 
 
@@ -37,7 +34,6 @@ class main
 
         $this ->html .= htmlTags::tableRowEnd();
         $this ->html .= htmlTags::tableHeadEnd();
-
         $this ->html .= htmlTags::tableBodyStart();
 
 
