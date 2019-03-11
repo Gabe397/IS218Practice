@@ -11,9 +11,6 @@ include "loops.php";
 class main
 {
     private $html;
-    public function insert($text){
-        return ($this -> html .= $text );
-    }
 
     public function __construct()
     {
