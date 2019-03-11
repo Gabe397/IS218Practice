@@ -1,4 +1,5 @@
 <?php
+include "loops.php";
 /**
  * Created by PhpStorm.
  * User: gabe3
@@ -25,21 +26,17 @@ class main
         $keys = array_keys((array)$var[0]);
 
 
-        //$this->insert(htmlTags::tableStart());
+        htmlTags::printBeginOfTable();
 
 
-        $this ->html .= htmlTags::tableStart();
-        $this ->html .= htmlTags::tableHeadStart();
-        $this ->html .= htmlTags::tableRowStart();
+       // for ($x = 0; $x < count($keys); $x++) {
+        //    $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
+        //}
 
-        for ($x = 0; $x < count($keys); $x++) {
-            $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
-        }
+        loops::forLoop(loops::xValReturn(0), loops::countNumReturn(count($keys)), htmlTags::tHeaderColumn($keys[$x]));
+        
 
-        $this ->html .= htmlTags::tableRowEnd();
-        $this ->html .= htmlTags::tableHeadEnd();
-
-        $this ->html .= htmlTags::tableBodyStart();
+        htmlTags::printRowEndBodyStartForTable();
 
 
         for ($y = 0; $y < count($var); $y++) {
@@ -52,17 +49,7 @@ class main
             $this -> html.= htmlTags::tableRowEnd();
        }
 
-
-
-
-
-        $this ->html .= htmlTags::tableBodyEnd();
-        $this ->html .= htmlTags::tableEnd();
-
-
-
     }
-
 
     public function __destruct()
     {
