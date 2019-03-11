@@ -28,9 +28,8 @@ class main
         //$this->insert(htmlTags::tableStart());
 
 
-        $this ->html .= htmlTags::tableStart();
-        $this ->html .= htmlTags::tableHeadStart();
-        $this ->html .= htmlTags::tableRowStart();
+        htmlTags::printBeginOfTable();
+
 
         for ($x = 0; $x < count($keys); $x++) {
             $this ->html .= htmlTags::tHeaderColumn($keys[$x]);

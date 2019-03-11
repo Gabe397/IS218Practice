@@ -66,8 +66,9 @@ class htmlTags
         return '</tbody>';
     }
 
-    public function thisHtml(): string{
-        return '$this -> html';
+    public static function printBeginOfTable (): void{
+        print (htmlTags::tableStart() . htmlTags::tableHeadStart() . htmlTags::tableRowStart());
     }
+
 
 }
