@@ -1,5 +1,4 @@
-make, model, year, test, empty,
-ford, pinto, 1967, 1, k,
-Volvo, XC40, 1999, Hello, m,
-Nissan, Ultima, 2007, T0, k,
-
+"make","model","year",'action','miles'
+'ford','pinto,'1967','drive','2123'
+'Volvo,'XC40','1999','carry','2415'
+'Nissan','Ultima','2007','fill','2134'
