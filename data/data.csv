@@ -1,4 +1,4 @@
-"make","model","year"
-'ford','pinto,'1967'
-'Volvo,'XC40','1999'
-'Nissan','Ultima','2007'
+"make","model","year",'action','miles'
+'ford','pinto,'1967','drive','2123'
+'Volvo,'XC40','1999','carry','2415'
+'Nissan','Ultima','2007','fill','2134'

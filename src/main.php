@@ -21,8 +21,7 @@ class main
 
         //$this->html .= htmlTags::tableStart( htmlTags::tableHead(htmlTags::tableRow(htmlTags::tHeaderColumn("Hello","yellow","bellow"))));
 
-        $myArray = array(1,2,3);
-        $var = File::readCSVIntoArray("../data/data.csv",'Car');
+        $var = File::readCSVIntoArray("../data/data.csv");
         $keys = array_keys((array)$var[0]);
 
 
@@ -33,7 +32,7 @@ class main
         $this ->html .= htmlTags::tableHeadStart();
         $this ->html .= htmlTags::tableRowStart();
 
-        for ($x = 0; $x < count($var); $x++) {
+        for ($x = 0; $x < count($keys); $x++) {
             $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
         }
 
@@ -42,16 +41,20 @@ class main
 
         $this ->html .= htmlTags::tableBodyStart();
 
+
         for ($y = 0; $y < count($var); $y++) {
             $this ->html .= htmlTags::tableRowStart();
-            for ($z = 0; $z < count($var) ; $z++) {
+            for ($z = 0; $z < count($keys) ; $z++) {
                 $hold = $keys[$z];
                 $this->html .= htmlTags::rowEntry(($var[$y]->$hold));
             }
 
-
             $this -> html.= htmlTags::tableRowEnd();
-        }
+       }
+
+
+
+
 
         $this ->html .= htmlTags::tableBodyEnd();
         $this ->html .= htmlTags::tableEnd();
