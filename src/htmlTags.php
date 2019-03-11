@@ -74,5 +74,10 @@ class htmlTags
         print (htmlTags::tableRowEnd() . htmlTags::tableHeadEnd() . htmlTags::tableBodyStart());
     }
 
+    public static function printTableBodyEndAndWholeTableEnd (): void{
+        print (htmlTags::tableBodyEnd() . htmlTags::tableEnd());
+    }
+
+
 
 }
