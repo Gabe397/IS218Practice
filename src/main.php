@@ -1,4 +1,5 @@
 <?php
+include "loops.php";
 /**
  * Created by PhpStorm.
  * User: gabe3
@@ -28,9 +29,12 @@ class main
         htmlTags::printBeginOfTable();
 
 
-        for ($x = 0; $x < count($keys); $x++) {
-            $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
-        }
+       // for ($x = 0; $x < count($keys); $x++) {
+        //    $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
+        //}
+
+        loops::forLoop(loops::xValReturn(0), loops::countNumReturn(count($keys)), htmlTags::tHeaderColumn($keys[$x]));
+        
 
         htmlTags::printRowEndBodyStartForTable();
 
@@ -45,10 +49,7 @@ class main
             $this -> html.= htmlTags::tableRowEnd();
        }
 
-
-
     }
-
 
     public function __destruct()
     {
