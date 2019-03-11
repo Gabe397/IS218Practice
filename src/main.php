@@ -11,16 +11,9 @@ include "loops.php";
 class main
 {
     private $html;
-    public function insert($text){
-        return ($this -> html .= $text );
-    }
 
     public function __construct()
     {
-        //Write a function for the columns, function that is a for loop that will run until there is no more keys in the array
-        //The problem with this is that if we have more than 3 columns in the csv it will fail. So we need to make VVVV this part calling the array keys dynamic.
-
-        //$this->html .= htmlTags::tableStart( htmlTags::tableHead(htmlTags::tableRow(htmlTags::tHeaderColumn("Hello","yellow","bellow"))));
 
         $var = File::readCSVIntoArray("../data/data.csv");
         $keys = array_keys((array)$var[0]);
@@ -29,12 +22,9 @@ class main
         htmlTags::printBeginOfTable();
 
 
-       // for ($x = 0; $x < count($keys); $x++) {
-        //    $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
-        //}
-
-        loops::forLoop(loops::xValReturn(0), loops::countNumReturn(count($keys)), htmlTags::tHeaderColumn($keys[$x]));
-        
+        for ($x = 0; $x < count($keys); $x++) {
+         $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
+        }
 
         htmlTags::printRowEndBodyStartForTable();
 
