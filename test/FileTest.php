@@ -89,47 +89,5 @@ class FileTest extends TestCase
 
 
 
-    public function testTableStart(): void{
-        $this -> assertTrue(
-            htmlTags::tableStart() == '<table class="table">'
-        );
-    }
-
-    public function testTableEnd(): void{
-        $this -> assertTrue(
-            htmlTags::tableEnd() == '</table>'
-        );
-    }
-
-    public function testTableHeadStart(): void{
-        $this -> assertTrue(
-            htmlTags::tableHeadStart() == '<thead>'
-        );
-    }
-
-    public function testTableHeadEnd(): void{
-        $this -> assertTrue(
-            htmlTags::tableHeadEnd() == '</thead>'
-        );
-    }
-
-    public function testTableRowStart(): void{
-        $this -> assertTrue(
-            htmlTags::tableRowStart() == '<tr>'
-        );
-    }
-
-    public function testTableRowEnd(): void{
-        $this -> assertTrue(
-            htmlTags::tableRowEnd() == '</tr>'
-        );
-    }
-
-    public function testRowEntry(): void{
-        $var = "Test";
-        $this -> assertTrue(
-            htmlTags::rowEntry($var) == '<td>' .$var. '</td>'
-        );
-    }
 
 }
