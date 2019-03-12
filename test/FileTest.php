@@ -115,6 +115,12 @@ class FileTest extends TestCase
         );
     }
 
+    public function testCount():void{
+        $testArray = array(1,2,3);
+
+        $this->assertEquals(3,ArrayFunctions::arrayCount($testArray));
+    }
+
 
 
 
