@@ -223,6 +223,13 @@ class FileTest extends TestCase
             method_exists(ArrayFunctions::class,'instantiateArray')
         );
     }
+    public function testArrayKeysExist(): void{
+        $this->assertTrue(
+            method_exists(ArrayFunctions::class,'arrayKeys')
+        );
+    }
+
+
 
     //File.php tests
     public function testReadCSVIntoArray(): void
