@@ -141,6 +141,12 @@ class FileTest extends TestCase
         );
     }
 
+    public function testCSVClose():void
+    {
+        $this->assertTrue(
+            method_exists(csvFunctions::class,'closeCSV')
+        );
+    }
 
 
 
