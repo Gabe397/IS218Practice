@@ -19,18 +19,22 @@ class main
 
         $keys = ArrayFunctions::arrayKeys((array)$arrayObjects[0]);
 
+        $keyCount = ArrayFunctions::arrayCount($keys);
+
+        $numOfObjects = ArrayFunctions::arrayCount($arrayObjects);
+
         htmlTags::printBeginOfTable();
 
-        for ($x = 0; $x < count($keys); $x++) {
+        for ($x = 0; $x < $keyCount; $x++) {
          $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
         }
 
         htmlTags::printRowEndBodyStartForTable();
 
 
-        for ($y = 0; $y < count($arrayObjects); $y++) {
+        for ($y = 0; $y < $numOfObjects; $y++) {
             $this ->html .= htmlTags::tableRowStart();
-            for ($z = 0; $z < count($keys) ; $z++) {
+            for ($z = 0; $z < $keyCount ; $z++) {
                 $hold = $keys[$z];
                 $this->html .= htmlTags::rowEntry(($arrayObjects[$y]->$hold));
             }
