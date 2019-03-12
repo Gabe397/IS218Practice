@@ -157,7 +157,13 @@ class FileTest extends TestCase
         );
     }
 
-   
+    public function testPrintRowEndBodyStartForTableExists(): void{
+        $this->assertTrue(
+            method_exists(htmlTags::class, 'printRowEndBodyStartForTable')
+        );
+    }
+
+    
 
 
 
