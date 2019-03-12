@@ -205,6 +205,10 @@ class FileTest extends TestCase
         method_exists(htmlTags::class, 'tableRowStart');
     }
 
+    public function testTableRowEndExists(): void{
+        method_exists(htmlTags::class, 'tableRowEnd');
+    }
+
 
 
 
