@@ -240,7 +240,11 @@ class FileTest extends TestCase
         );
 
     }
-    
+    public function testDestructExists(): void{
+        $this -> assertTrue(
+            method_exists(main::class,'__destruct')
+        );
+    }
 
 
     //csvFunctions.php tests
