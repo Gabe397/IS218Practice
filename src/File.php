@@ -11,7 +11,7 @@ class File
 {
     public static function readCSVIntoArray(string $fileName):array
     {
-        $recordsArray = Array();
+        $recordsArray = ArrayFunctions::instantiateArray();
         $count = 0;
         $fieldName = '';
 
