@@ -300,7 +300,7 @@ class FileTest extends TestCase
 
 
 
-    
+
 
     //generic tests
     public function testFileInstantiate(): void
