@@ -189,7 +189,9 @@ class FileTest extends TestCase
         );
     }
 
-
+    public function testTableEndExists(): void{
+        method_exists(htmlTags::class, 'tableEnd');
+    }
 
 
 
