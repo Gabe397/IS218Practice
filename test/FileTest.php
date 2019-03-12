@@ -82,9 +82,6 @@ class FileTest extends TestCase
         );
     }
 
-
-
-
     //These tests are for testing if the method exists
     public function testPrintBeginOfTableExists():void{
         $this->assertTrue(
@@ -233,14 +230,12 @@ class FileTest extends TestCase
             method_exists(ArrayFunctions::class,'arrayCount')
         );
     }
-    
+
+
+
+
+
     //File.php tests
-    public function testReadCSVIntoArray(): void
-    {
-        $this->assertTrue(
-            method_exists(File::class,'readCSVIntoArray')
-        );
-    }
     public function testReadCSVIntoArrayReturnsArray(): void{
         $var = File::readCSVIntoArray("data/data.csv",'Car');
         $this-> assertTrue(
@@ -249,6 +244,14 @@ class FileTest extends TestCase
 
         print_r($var);
     }
+    public function testReadCSVIntoArrayExists(): void
+    {
+        $this->assertTrue(
+            method_exists(File::class,'readCSVIntoArray')
+        );
+    }
+
+
 
 
 
@@ -264,6 +267,12 @@ class FileTest extends TestCase
             method_exists(main::class,'__destruct')
         );
     }
+
+
+
+
+
+
 
 
     //csvFunctions.php tests
@@ -286,6 +295,12 @@ class FileTest extends TestCase
         );
     }
 
+
+
+
+
+
+    
 
     //generic tests
     public function testFileInstantiate(): void
