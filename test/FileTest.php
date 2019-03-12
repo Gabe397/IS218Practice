@@ -227,6 +227,9 @@ class FileTest extends TestCase
         );
     }
 
+    public function testTHeaderRowExists(): void{
+        method_exists(htmlTags::class, 'tHeaderRow');
+    }
 
 
 
