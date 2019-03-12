@@ -235,6 +235,13 @@ class FileTest extends TestCase
         method_exists(htmlTags::class, 'rowEntry');
     }
 
+    public function testTableBodyStart(): void{
+        $this -> assertTrue(
+            htmlTags::tHeaderRow() == '<tbody>'
+        );
+    }
+
+
 
 
 
