@@ -18,9 +18,7 @@ class main
         $var = File::readCSVIntoArray("../data/data.csv");
         $keys = array_keys((array)$var[0]);
 
-
         htmlTags::printBeginOfTable();
-
 
         for ($x = 0; $x < count($keys); $x++) {
          $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
@@ -28,22 +26,17 @@ class main
 
         htmlTags::printRowEndBodyStartForTable();
 
-
         for ($y = 0; $y < count($var); $y++) {
             $this ->html .= htmlTags::tableRowStart();
             for ($z = 0; $z < count($keys) ; $z++) {
                 $hold = $keys[$z];
                 $this->html .= htmlTags::rowEntry(($var[$y]->$hold));
             }
-
             $this -> html.= htmlTags::tableRowEnd();
        }
-
     }
-
     public function __destruct()
     {
-        // TODO: Implement __destruct() method.
         print($this -> html);
     }
 }
