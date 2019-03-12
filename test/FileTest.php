@@ -56,6 +56,8 @@ class FileTest extends TestCase
         );
     }
 
+
+
     public function testTableEnd(): void{
         $this -> assertTrue(
             htmlTags::tableEnd() == '</table>'
@@ -171,11 +173,26 @@ class FileTest extends TestCase
 
     public function testTableBodyEndExists(): void{
         $this->assertTrue(
-            method_exists(htmlTags::class, 'tableBodyENd')
+            method_exists(htmlTags::class, 'tableBodyEnd')
         );
     }
 
-    
+    public function testTableBodyEnd(): void{
+        $this->assertTrue(
+            htmlTags::tableBodyEnd() == '</tbody>'
+        );
+    }
+
+    public function testTableStartExists(): void{
+        $this -> assertTrue(
+            method_exists(htmlTags::class, 'tableStart')
+        );
+    }
+
+
+
+
+
 
 
 
