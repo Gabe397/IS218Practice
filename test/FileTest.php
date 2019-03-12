@@ -14,7 +14,7 @@ class FileTest extends TestCase
     public function testFileInstantiate(): void
     {
         $file = new File();
-       // $this-> assertInstanceOf(File::class,$file);
+        $this-> assertInstanceOf(File::class,$file);
     }
 
     public function testCSVExists() :void
@@ -86,6 +86,36 @@ class FileTest extends TestCase
             htmlTags::rowEntry($var) == '<td>' .$var. '</td>'
         );
     }
+
+    public function testCombineArray():void {
+        $array1 = array(1,2,3);
+        $array2 = array(4,5, 6);
+        $combinedArray = ArrayFunctions::combineArray($array1,$array2);
+
+        $this -> assertTrue(
+            $combinedArray[1] == 4 && $combinedArray[2] == 5 && $combinedArray[3] == 6, "Arrays are Combined"
+        );
+    }
+
+    public function testArrayInstantiate() :void
+    {
+        $testArray = ArrayFunctions::instantiateArray();
+        $this -> assertIsArray(
+            $testArray
+        );
+    }
+
+    public function testArrayKeys() :void{
+        $testArray = array("key1" => 1, "key2" => 2);
+        $keys = ArrayFunctions::arrayKeys($testArray);
+
+
+        self::assertTrue(
+            $keys[0] == "key1"
+        );
+    }
+
+
 
 
 
