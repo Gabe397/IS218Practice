@@ -23,4 +23,9 @@ class ArrayFunctions
         return array_keys((array) $list);
     }
 
+    public static function arrayCount(array $list)
+    {
+        return count($list);
+    }
+
 }
