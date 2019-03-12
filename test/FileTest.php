@@ -213,6 +213,11 @@ class FileTest extends TestCase
 
         $this->assertEquals(3,ArrayFunctions::arrayCount($testArray));
     }
+    public function testCombineArrayExists(): void{
+        $this->assertTrue(
+            method_exists(ArrayFunctions::class,'combineArray')
+        );
+    }
 
 
     //File.php tests
@@ -266,7 +271,6 @@ class FileTest extends TestCase
             method_exists(csvFunctions::class,'closeCSV')
         );
     }
-
 
 
     //generic tests
