@@ -190,23 +190,38 @@ class FileTest extends TestCase
     }
 
     public function testTableEndExists(): void{
-        method_exists(htmlTags::class, 'tableEnd');
+        $this -> assertTrue(
+            method_exists(htmlTags::class, 'tableEnd')
+        );
+
     }
 
     public function testTableHeadStartExists(): void{
-        method_exists(htmlTags::class, 'tableHeadStart');
+        $this -> assertTrue(
+            method_exists(htmlTags::class, 'tableHeadStart')
+        );
+
     }
 
     public function testTableHeadEndExists():void{
-        method_exists(htmlTags::class, 'tableHeadEnd');
+        $this -> assertTrue(
+            method_exists(htmlTags::class, 'tableHeadEnd')
+        );
+
     }
 
-    public function testTableRowStartExists():voif{
-        method_exists(htmlTags::class, 'tableRowStart');
+    public function testTableRowStartExists():void{
+        $this -> assertTrue(
+            method_exists(htmlTags::class, 'tableRowStart')
+        );
+
     }
 
     public function testTableRowEndExists(): void{
-        method_exists(htmlTags::class, 'tableRowEnd');
+        $this -> assertTrue(
+            method_exists(htmlTags::class, 'tableRowEnd')
+        );
+
     }
 
     public function testTHeaderColumn(): void{
@@ -217,7 +232,10 @@ class FileTest extends TestCase
     }
 
     public function testTHeaderColumnExists(): void{
-        method_exists(htmlTags::class, 'tHeaderColumn');
+        $this -> assertTrue(
+            method_exists(htmlTags::class, 'tHeaderColumn')
+        );
+
     }
 
     public function testTHeaderRow(): void{
@@ -228,11 +246,17 @@ class FileTest extends TestCase
     }
 
     public function testTHeaderRowExists(): void{
-        method_exists(htmlTags::class, 'tHeaderRow');
+        $this -> assertTrue(
+            method_exists(htmlTags::class, 'tHeaderRow')
+        );
+
     }
 
     public function testRowEntryExists(): void{
-        method_exists(htmlTags::class, 'rowEntry');
+        $this -> assertTrue(
+            method_exists(htmlTags::class, 'rowEntry')
+        );
+
     }
 
     public function testTableBodyStart(): void{
@@ -242,7 +266,10 @@ class FileTest extends TestCase
     }
 
     public function testTableBodyStartExists(): void{
-        method_exists(htmlTags::class, 'tableBodyStart');
+        $this -> assertTrue(
+            method_exists(htmlTags::class, 'tableBodyStart')
+        );
+
     }
     
 
