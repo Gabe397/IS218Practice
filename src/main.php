@@ -15,12 +15,11 @@ class main
     public function __construct()
     {
 
-        $var = File::readCSVIntoArray("../data/data.csv");
-        $keys = array_keys((array)$var[0]);
+        $arrayObjects = File::readCSVIntoArray("../data/data.csv");
 
+        $keys = ArrayFunctions::arrayKeys((array)$arrayObjects[0]);
 
         htmlTags::printBeginOfTable();
-
 
         for ($x = 0; $x < count($keys); $x++) {
          $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
@@ -29,11 +28,11 @@ class main
         htmlTags::printRowEndBodyStartForTable();
 
 
-        for ($y = 0; $y < count($var); $y++) {
+        for ($y = 0; $y < count($arrayObjects); $y++) {
             $this ->html .= htmlTags::tableRowStart();
             for ($z = 0; $z < count($keys) ; $z++) {
                 $hold = $keys[$z];
-                $this->html .= htmlTags::rowEntry(($var[$y]->$hold));
+                $this->html .= htmlTags::rowEntry(($arrayObjects[$y]->$hold));
             }
 
             $this -> html.= htmlTags::tableRowEnd();
