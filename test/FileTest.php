@@ -163,6 +163,16 @@ class FileTest extends TestCase
         );
     }
 
+    public function testPrintTableBodyEndAndWholeTableEndExists(): void{
+        $this->assertTrue(
+            method_exists(htmlTags::class, 'printTableBodyEndAndWholeTableEnd')
+        );
+    }
+
+
+
+
+
     
 
 
