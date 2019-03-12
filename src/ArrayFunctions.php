@@ -12,4 +12,20 @@ class ArrayFunctions
     {
         return array_combine($key, $val);
     }
+
+    public static function instantiateArray()
+    {
+        return  Array();
+    }
+
+    public static function arrayKeys(array $list)
+    {
+        return array_keys((array) $list);
+    }
+
+    public static function arrayCount(array $list)
+    {
+        return count($list);
+    }
+
 }

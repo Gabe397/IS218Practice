@@ -11,13 +11,14 @@ class File
 {
     public static function readCSVIntoArray(string $fileName):array
     {
-        $recordsArray = Array();
+        $recordsArray = ArrayFunctions::instantiateArray();
         $count = 0;
         $fieldName = '';
 
-        if(($handle = fopen("$fileName",'r')) !== FALSE)
+
+        if($handle = csvFunctions::openFile($fileName))
         {
-            while(($row = fgetcsv($handle,1000,",")) != FALSE)
+            while($row = csvFunctions::getCSVRow($handle))
             {
                 if($count == 0)
                 {
@@ -26,11 +27,12 @@ class File
 
                 else{
                     $recordsArray[] =(object)recFactory::Build($fieldName,$row);
+
                 }
                 $count++;
 
             }
-            fclose($handle);
+            csvFunctions::closeCSV($handle);
         }
         return $recordsArray;
     }

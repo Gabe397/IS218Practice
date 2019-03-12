@@ -14,7 +14,7 @@ class FileTest extends TestCase
     public function testFileInstantiate(): void
     {
         $file = new File();
-       // $this-> assertInstanceOf(File::class,$file);
+        $this-> assertInstanceOf(File::class,$file);
     }
 
     public function testCSVExists() :void
@@ -55,37 +55,100 @@ class FileTest extends TestCase
             htmlTags::tableStart() == '<table class="table">'
         );
     }
+
     public function testTableEnd(): void{
         $this -> assertTrue(
             htmlTags::tableEnd() == '</table>'
         );
     }
+
     public function testTableHeadStart(): void{
         $this -> assertTrue(
             htmlTags::tableHeadStart() == '<thead>'
         );
     }
+
     public function testTableHeadEnd(): void{
         $this -> assertTrue(
             htmlTags::tableHeadEnd() == '</thead>'
         );
     }
+
     public function testTableRowStart(): void{
         $this -> assertTrue(
             htmlTags::tableRowStart() == '<tr>'
         );
     }
+
     public function testTableRowEnd(): void{
         $this -> assertTrue(
             htmlTags::tableRowEnd() == '</tr>'
         );
     }
+
     public function testRowEntry(): void{
         $var = "Test";
         $this -> assertTrue(
             htmlTags::rowEntry($var) == '<td>' .$var. '</td>'
         );
     }
+
+    public function testCombineArray():void {
+        $array1 = array(1,2,3);
+        $array2 = array(4,5, 6);
+        $combinedArray = ArrayFunctions::combineArray($array1,$array2);
+
+        $this -> assertTrue(
+            $combinedArray[1] == 4 && $combinedArray[2] == 5 && $combinedArray[3] == 6, "Arrays are Combined"
+        );
+    }
+
+    public function testArrayInstantiate() :void
+    {
+        $testArray = ArrayFunctions::instantiateArray();
+        $this -> assertIsArray(
+            $testArray
+        );
+    }
+
+    public function testArrayKeys() :void{
+        $testArray = array("key1" => 1, "key2" => 2);
+        $keys = ArrayFunctions::arrayKeys($testArray);
+
+
+        self::assertTrue(
+            $keys[0] == "key1"
+        );
+    }
+
+    public function testCount():void{
+        $testArray = array(1,2,3);
+
+        $this->assertEquals(3,ArrayFunctions::arrayCount($testArray));
+    }
+
+    public function testCSVOpenExists():void
+    {
+        $this->assertTrue(
+            method_exists(csvFunctions::class,'openFile')
+        );
+    }
+
+    public function testCSVRow():void
+    {
+        $this->assertTrue(
+            method_exists(csvFunctions::class,'getCSVRow')
+        );
+    }
+
+    public function testCSVClose():void
+    {
+        $this->assertTrue(
+            method_exists(csvFunctions::class,'closeCSV')
+        );
+    }
+
+
 
 
 
