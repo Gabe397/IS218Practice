@@ -254,15 +254,13 @@ class FileTest extends TestCase
             method_exists(csvFunctions::class,'openFile')
         );
     }
-
-    public function testCSVRow():void
+    public function testCSVRowExists():void
     {
         $this->assertTrue(
             method_exists(csvFunctions::class,'getCSVRow')
         );
     }
-
-    public function testCSVClose():void
+    public function testCSVCloseExists():void
     {
         $this->assertTrue(
             method_exists(csvFunctions::class,'closeCSV')
