@@ -169,8 +169,15 @@ class FileTest extends TestCase
         );
     }
 
+    public function testTableBodyEndExists(): void{
+        $this->assertTrue(
+            method_exists(htmlTags::class, 'tableBodyENd')
+        );
+    }
 
     
+
+
 
 
 
