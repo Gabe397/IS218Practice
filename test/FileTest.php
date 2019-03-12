@@ -151,6 +151,17 @@ class FileTest extends TestCase
 
 
 
+    public function testPrintBeginOfTableExists():void{
+        $this->assertTrue(
+            method_exists(htmlTags::class, 'printBeginOfTable')
+        );
+    }
+
+   
+
+
+
+
 
 
 }
