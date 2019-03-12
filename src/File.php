@@ -18,7 +18,7 @@ class File
 
         if($handle = csvFunctions::openFile($fileName))
         {
-            while($row = csvFunctions::getCSV($handle))
+            while($row = csvFunctions::getCSVRow($handle))
             {
                 if($count == 0)
                 {

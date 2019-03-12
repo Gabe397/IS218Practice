@@ -55,31 +55,37 @@ class FileTest extends TestCase
             htmlTags::tableStart() == '<table class="table">'
         );
     }
+
     public function testTableEnd(): void{
         $this -> assertTrue(
             htmlTags::tableEnd() == '</table>'
         );
     }
+
     public function testTableHeadStart(): void{
         $this -> assertTrue(
             htmlTags::tableHeadStart() == '<thead>'
         );
     }
+
     public function testTableHeadEnd(): void{
         $this -> assertTrue(
             htmlTags::tableHeadEnd() == '</thead>'
         );
     }
+
     public function testTableRowStart(): void{
         $this -> assertTrue(
             htmlTags::tableRowStart() == '<tr>'
         );
     }
+
     public function testTableRowEnd(): void{
         $this -> assertTrue(
             htmlTags::tableRowEnd() == '</tr>'
         );
     }
+
     public function testRowEntry(): void{
         $var = "Test";
         $this -> assertTrue(
@@ -120,6 +126,21 @@ class FileTest extends TestCase
 
         $this->assertEquals(3,ArrayFunctions::arrayCount($testArray));
     }
+
+    public function testCSVOpenExists():void
+    {
+        $this->assertTrue(
+            method_exists(csvFunctions::class,'openFile')
+        );
+    }
+
+    public function testCSVRow():void
+    {
+        $this->assertTrue(
+            method_exists(csvFunctions::class,'getCSVRow')
+        );
+    }
+
 
 
 

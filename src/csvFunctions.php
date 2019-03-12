@@ -13,7 +13,7 @@ class csvFunctions
         return fopen($fileName,"r");
     }
 
-    public static function getCSV($handle)
+    public static function getCSVRow($handle)
     {
         return fgetcsv($handle,1000,",");
     }
