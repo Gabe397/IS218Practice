@@ -184,7 +184,11 @@ class FileTest extends TestCase
         );
     }
 
-    
+    public function testPrintTableBodyEndAndWholeTableEnd(): void{
+        $this->assertTrue(
+            htmlTags::printRowEndBodyStartForTable()== ('</tbody>' .  '</table>')
+        );
+    }
 
 
 
