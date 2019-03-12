@@ -231,6 +231,11 @@ class FileTest extends TestCase
         method_exists(htmlTags::class, 'tHeaderRow');
     }
 
+    public function testRowEntryExists(): void{
+        method_exists(htmlTags::class, 'rowEntry');
+    }
+
+
 
 
 
