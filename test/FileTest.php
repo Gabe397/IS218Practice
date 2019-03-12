@@ -237,9 +237,11 @@ class FileTest extends TestCase
 
     public function testTableBodyStart(): void{
         $this -> assertTrue(
-            htmlTags::tHeaderRow() == '<tbody>'
+            htmlTags::tableBodyStart() == '<tbody>'
         );
     }
+
+
 
 
 
