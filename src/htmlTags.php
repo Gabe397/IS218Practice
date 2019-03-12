@@ -66,18 +66,21 @@ class htmlTags
     }
 
     public static function printBeginOfTable(): void {
-        print(htmlTags::tableStart() . htmlTags::tableHeadStart() . htmlTags::tableRowStart());
+        print (htmlTags::tableStart() . htmlTags::tableHeadStart() . htmlTags::tableRowStart());
 
     }
 
     public static function printRowEndBodyStartForTable(): void{
-        print(htmlTags::tableRowEnd() . htmlTags::tableHeadEnd() . htmlTags::tableBodyStart());
+        print (htmlTags::tableRowEnd() . htmlTags::tableHeadEnd() . htmlTags::tableBodyStart());
 
     }
 
     public static function printTableBodyEndAndWholeTableEnd(): void{
-        print(htmlTags::tableBodyEnd() . htmlTags::tableEnd());
+        print (htmlTags::tableBodyEnd() . htmlTags::tableEnd());
     }
+
+
+
 
 
 

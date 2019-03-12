@@ -170,25 +170,7 @@ class FileTest extends TestCase
     }
 
 
-
-    public function testPrintBeginOfTable():void{
-        $this->assertTrue(
-            htmlTags::printBeginOfTable()== ('<table class="table">' . '<thead>' . '<tr>')
-        );
-    }
-
-
-    public function testPrintRowEndBodyStartForTable(): void{
-        $this->assertTrue(
-            htmlTags::printRowEndBodyStartForTable()== ('</tr>' . '</thead>' . '<tbody>')
-        );
-    }
-
-    public function testPrintTableBodyEndAndWholeTableEnd(): void{
-        $this->assertTrue(
-            htmlTags::printRowEndBodyStartForTable()== ('</tbody>' .  '</table>')
-        );
-    }
+    
 
 
 
