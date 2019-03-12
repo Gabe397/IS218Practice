@@ -209,6 +209,12 @@ class FileTest extends TestCase
         method_exists(htmlTags::class, 'tableRowEnd');
     }
 
+    public function testTHeaderColumn(): void{
+        $test = 'hello';
+        $this -> assertTrue(
+            htmlTags::tHeaderColumn($test) == '<th scope = "col">' .$test. '</th>'
+        );
+    }
 
 
 
