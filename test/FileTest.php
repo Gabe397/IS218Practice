@@ -216,6 +216,10 @@ class FileTest extends TestCase
         );
     }
 
+    public function testTHeaderColumnExists(): void{
+        method_exists(htmlTags::class, 'tHeaderColumn');
+    }
+
 
 
 
