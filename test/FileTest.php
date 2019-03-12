@@ -218,7 +218,11 @@ class FileTest extends TestCase
             method_exists(ArrayFunctions::class,'combineArray')
         );
     }
-
+    public function testInstantiateArrayExists(): void{
+        $this->assertTrue(
+            method_exists(ArrayFunctions::class,'instantiateArray')
+        );
+    }
 
     //File.php tests
     public function testReadCSVIntoArray(): void
