@@ -241,6 +241,11 @@ class FileTest extends TestCase
         );
     }
 
+    public function testTableBodyStartExists(): void{
+        method_exists(htmlTags::class, 'tableBodyStart');
+    }
+
+
 
 
 
