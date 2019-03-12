@@ -171,9 +171,15 @@ class FileTest extends TestCase
 
 
 
+    public function testPrintBeginOfTable():void{
+        $this->assertTrue(
+            htmlTags::printBeginOfTable()== ('<table class="table">' . '<thead>' . '<tr>')
+        );
+    }
 
 
-    
+  
+
 
 
 
