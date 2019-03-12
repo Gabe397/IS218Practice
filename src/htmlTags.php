@@ -79,9 +79,4 @@ class htmlTags
         print (htmlTags::tableBodyEnd() . htmlTags::tableEnd());
     }
 
-
-
-
-
-
 }
