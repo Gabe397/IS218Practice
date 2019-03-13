@@ -15,25 +15,28 @@ class csv
 
         $count = 0;
 
-        while(! feof($file))
+        $recordArray = ArrayFunctions::instantiateArray();
+
+        if($handle = csvFunctions::openFile($fileName))
         {
-            $record = csvFunctions::getCSVRow($file);
-            if($count == 0)
+            while($row = csvFunctions::getCSVRow($handle))
             {
-                $fieldNames = $record;
-            }
+                $record = csvFunctions::getCSVRow($file);
+                if($count == 0)
+                {
+                    $fieldNames = $record;
+                }
 
             else{
-                $recordArray[] =  recFactory::Build($fieldNames, $record);
-            }
+                $recordArray[] = Factory::Build($fieldNames, $record);
+                }
 
             $count++;
 
+            }
+            csvFunctions::closeCSV($handle);
         }
-
-        csvFunctions::closeCSV($file);
         return $recordArray;
-
     }
 
 }
