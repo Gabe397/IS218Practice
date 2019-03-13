@@ -7,7 +7,6 @@
  * Time: 3:15 AM
  */
 
-
 class main
 {
     private $html;
@@ -15,7 +14,7 @@ class main
     public function __construct()
     {
 
-        $arrayObjects = File::readCSVIntoArray("../data/data.csv");
+        $arrayObjects = csv::getRecords("../data/athletes.csv");
 
         $keys = ArrayFunctions::arrayKeys((array)$arrayObjects[0]);
 
@@ -26,7 +25,7 @@ class main
         htmlTags::printBeginOfTable();
 
         for ($x = 0; $x < $keyCount; $x++) {
-         $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
+            $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
         }
 
         htmlTags::printRowEndBodyStartForTable();
@@ -40,7 +39,7 @@ class main
             }
 
             $this -> html.= htmlTags::tableRowEnd();
-       }
+        }
     }
 
     public function __destruct()
