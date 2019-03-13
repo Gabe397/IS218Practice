@@ -15,7 +15,7 @@ class FileTest extends TestCase
     //These tests are for the htmlTags.php file and if they return the correct values
     public function testTableStart(): void{
         $this -> assertTrue(
-            htmlTags::tableStart() == '<table class="table">'
+            htmlTags::tableStart() == '<table class="table table-striped">'
         );
     }
 
@@ -236,8 +236,8 @@ class FileTest extends TestCase
 
 
     //File.php tests
-    public function testReadCSVIntoArrayReturnsArray(): void{
-        $var = File::readCSVIntoArray("data/data.csv",'Car');
+    public function testGetRecords(): void{
+        $var = csv::getRecords("data/data.csv");
         $this-> assertTrue(
             gettype($var)==gettype(array())
         );
@@ -320,6 +320,8 @@ class FileTest extends TestCase
     }
 
 
+
+    //Testing
 
 
 
