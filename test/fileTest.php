@@ -251,8 +251,11 @@ class fileTest extends TestCase
 
         print_r($var);
     }
-    
-
+    public function testGetRecordsExists(): void{
+        $this->assertTrue(
+            method_exists(csv::class,'getRecords')
+        );
+    }
 
 
 
