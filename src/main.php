@@ -14,7 +14,7 @@ class main
     public function __construct()
     {
 
-        $arrayObjects = csv::getRecords("../data/athletes.csv");
+        $arrayObjects = csv::getRecords("../data/data.csv");
 
         $keys = ArrayFunctions::arrayKeys((array)$arrayObjects[0]);
 
