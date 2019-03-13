@@ -242,7 +242,7 @@ class fileTest extends TestCase
 
 
 
-    //file.php tests
+    //csv.php tests
     public function testGetRecords(): void{
         $var = csv::getRecords("data/data.csv");
         $this-> assertTrue(
@@ -251,13 +251,7 @@ class fileTest extends TestCase
 
         print_r($var);
     }
-
-    public function testReadCSVIntoArrayExists(): void
-    {
-        $this->assertTrue(
-            method_exists(file::class,'readCSVIntoArray')
-        );
-    }
+    
 
 
 
