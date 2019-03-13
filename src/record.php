@@ -19,9 +19,9 @@ class record
 
     }
 
-    public static function returnArray()
+    public function returnArray()
     {
-        $array = ArrayFunctions::instantiateArray();
+        $array = (array) $this ;
 
         return $array;
     }
