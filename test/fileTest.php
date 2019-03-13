@@ -275,34 +275,35 @@ class fileTest extends TestCase
     }
 
 
-
-
-
     //csvFunctions.php tests
-    public function testCSVOpenExists():void
+    public function testOpenFileExists():void
     {
         $this->assertTrue(
             method_exists(csvFunctions::class,'openFile')
         );
     }
 
-    public function testCSVRowExists():void
+    public function testGetRowExists():void
     {
         $this->assertTrue(
             method_exists(csvFunctions::class,'getCSVRow')
         );
     }
 
-    public function testCSVCloseExists():void
+    public function testCloseCSVExists():void
     {
         $this->assertTrue(
             method_exists(csvFunctions::class,'closeCSV')
         );
     }
 
+    public function testGetHandleExists(): void{
+        $this->assertTrue(
+            method_exists(csvFunctions::class,'getHandle')
+        );
+    }
 
-
-
+    
 
 
 
@@ -326,7 +327,7 @@ class fileTest extends TestCase
 
 
 
-    //Testing
+
 
 
 
