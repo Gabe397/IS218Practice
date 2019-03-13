@@ -1,5 +1,5 @@
 <?php
-include "loops.php";
+
 /**
  * Created by PhpStorm.
  * User: gabe3
