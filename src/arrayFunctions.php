@@ -6,7 +6,7 @@
  * Time: 3:28 AM
  */
 
-class ArrayFunctions
+class arrayFunctions
 {
     public static function combineArray(array $key,array $val)
     {

@@ -11,11 +11,11 @@ class csv
     static public function getRecords($fileName){
         $file = csvFunctions::openFile($fileName);
 
-        $fieldNames = ArrayFunctions::instantiateArray();
+        $fieldNames = arrayFunctions::instantiateArray();
 
         $count = 0;
 
-        $recordArray = ArrayFunctions::instantiateArray();
+        $recordArray = arrayFunctions::instantiateArray();
 
         if($handle = csvFunctions::openFile($fileName))
         {
@@ -28,7 +28,7 @@ class csv
                 }
 
             else{
-                $recordArray[] = Factory::Build($fieldNames, $record);
+                $recordArray[] = factory::Build($fieldNames, $record);
                 }
 
             $count++;

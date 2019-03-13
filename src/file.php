@@ -7,11 +7,11 @@
  * Time: 6:45 PM
  */
 
-class File
+class file
 {
     public static function readCSVIntoArray(string $fileName):array
     {
-        $recordsArray = ArrayFunctions::instantiateArray();
+        $recordsArray = arrayFunctions::instantiateArray();
         $count = 0;
         $fieldName = '';
 

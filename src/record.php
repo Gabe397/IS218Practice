@@ -10,7 +10,7 @@ class record
 {
     public function __construct(Array $fieldNames = null, $values = null)
     {
-        $record = ArrayFunctions::combineArray($fieldNames,$values);
+        $record = arrayFunctions::combineArray($fieldNames,$values);
 
         foreach ($record as $property => $value)
         {

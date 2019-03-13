@@ -6,14 +6,14 @@
  * Time: 4:01 AM
  */
 
-include "ArrayFunctions.php";
+include "arrayFunctions.php";
 include "htmlTags.php";
 include "main.php";
 include "record.php";
 include "csvFunctions.php";
 include "csv.php";
-include "Factory.php";
-class Classes
+include "factory.php";
+class classes
 {
 
 }

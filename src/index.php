@@ -71,7 +71,7 @@
 
 <div>
     <?php
-        include_once ("Classes.php");
+        include_once("classes.php");
         new main();
     ?>
 

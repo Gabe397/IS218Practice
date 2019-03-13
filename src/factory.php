@@ -6,7 +6,7 @@
  * Time: 11:38 PM
  */
 
-class Factory
+class factory
 {
     public static function Build(Array $fieldNames = null, Array $values = null)
     {

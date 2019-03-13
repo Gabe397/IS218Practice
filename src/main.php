@@ -16,11 +16,11 @@ class main
 
         $arrayObjects = csv::getRecords("../data/athletes.csv");
 
-        $keys = ArrayFunctions::arrayKeys((array)$arrayObjects[0]);
+        $keys = arrayFunctions::arrayKeys((array)$arrayObjects[0]);
 
-        $keyCount = ArrayFunctions::arrayCount($keys);
+        $keyCount = arrayFunctions::arrayCount($keys);
 
-        $numOfObjects = ArrayFunctions::arrayCount($arrayObjects);
+        $numOfObjects = arrayFunctions::arrayCount($arrayObjects);
 
         htmlTags::printBeginOfTable();
 
