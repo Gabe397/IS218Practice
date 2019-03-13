@@ -13,11 +13,13 @@ class csv
 
         $fieldNames = arrayFunctions::instantiateArray();
 
+        $handle = csvFunctions::getHandle($fileName);
+
         $count = 0;
 
         $recordArray = arrayFunctions::instantiateArray();
 
-        if($handle = csvFunctions::openFile($fileName))
+        if($handle)
         {
             while($row = csvFunctions::getCSVRow($handle))
             {
