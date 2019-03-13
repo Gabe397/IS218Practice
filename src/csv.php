@@ -8,5 +8,32 @@
 
 class csv
 {
+    static public function getRecords($fileName){
+        $file = csvFunctions::openFile($fileName);
+
+        $fieldNames = ArrayFunctions::instantiateArray();
+
+        $count = 0;
+
+        while(! feof($file))
+        {
+            $record = csvFunctions::getCSVRow($file);
+            if($count == 0)
+            {
+                $fieldNames = $record;
+            }
+
+            else{
+                $recordArray[] =  recFactory::Build($fieldNames, $record);
+            }
+
+            $count++;
+
+        }
+
+        csvFunctions::closeCSV($file);
+        return $recordArray;
+
+    }
 
 }
