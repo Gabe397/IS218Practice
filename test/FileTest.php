@@ -189,6 +189,7 @@ class FileTest extends TestCase
             $combinedArray[1] == 4 && $combinedArray[2] == 5 && $combinedArray[3] == 6, "Arrays are Combined"
         );
     }
+
     public function testInstantiateArray() :void
     {
         $testArray = ArrayFunctions::instantiateArray();
@@ -196,6 +197,7 @@ class FileTest extends TestCase
             $testArray
         );
     }
+
     public function testArrayKeys() :void{
         $testArray = array("key1" => 1, "key2" => 2);
         $keys = ArrayFunctions::arrayKeys($testArray);
@@ -205,26 +207,31 @@ class FileTest extends TestCase
             $keys[0] == "key1"
         );
     }
+
     public function testArrayCount():void{
         $testArray = array(1,2,3);
 
         $this->assertEquals(3,ArrayFunctions::arrayCount($testArray));
     }
+
     public function testCombineArrayExists(): void{
         $this->assertTrue(
             method_exists(ArrayFunctions::class,'combineArray')
         );
     }
+
     public function testInstantiateArrayExists(): void{
         $this->assertTrue(
             method_exists(ArrayFunctions::class,'instantiateArray')
         );
     }
+
     public function testArrayKeysExist(): void{
         $this->assertTrue(
             method_exists(ArrayFunctions::class,'arrayKeys')
         );
     }
+
     public function testArrayCountExists(): void{
         $this->assertTrue(
             method_exists(ArrayFunctions::class,'arrayCount')
@@ -244,6 +251,7 @@ class FileTest extends TestCase
 
         print_r($var);
     }
+
     public function testReadCSVIntoArrayExists(): void
     {
         $this->assertTrue(
@@ -262,14 +270,12 @@ class FileTest extends TestCase
         );
 
     }
+
     public function testDestructExists(): void{
         $this -> assertTrue(
             method_exists(main::class,'__destruct')
         );
     }
-
-
-
 
 
 
@@ -282,12 +288,14 @@ class FileTest extends TestCase
             method_exists(csvFunctions::class,'openFile')
         );
     }
+
     public function testCSVRowExists():void
     {
         $this->assertTrue(
             method_exists(csvFunctions::class,'getCSVRow')
         );
     }
+
     public function testCSVCloseExists():void
     {
         $this->assertTrue(
