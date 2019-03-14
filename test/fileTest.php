@@ -334,8 +334,8 @@ class fileTest extends TestCase
     //generic tests
     public function testFileInstantiate(): void
     {
-        $file = new file();
-        $this-> assertInstanceOf(file::class,$file);
+        $file = new csv();
+        $this-> assertInstanceOf(csv::class,$file);
     }
 
     public function testCSVExists() :void
