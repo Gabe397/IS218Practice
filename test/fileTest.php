@@ -325,7 +325,11 @@ class fileTest extends TestCase
             method_exists(record::class, 'returnArray')
         );
     }
-
+    public function testCreatePropertyExists(): void{
+        $this->assertTrue(
+            method_exists(record::class, 'createProperty')
+        );
+    }
 
 
     //generic tests
