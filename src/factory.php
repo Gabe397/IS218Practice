@@ -8,7 +8,7 @@
 
 class factory
 {
-    public static function Build(Array $fieldNames = null, Array $values = null)
+    public static function build(Array $fieldNames = null, Array $values = null)
     {
         $record = new record($fieldNames,$values);
 

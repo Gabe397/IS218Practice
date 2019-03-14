@@ -30,7 +30,7 @@ class csv
                 }
 
             else{
-                $recordArray[] = factory::Build($fieldNames, $record);
+                $recordArray[] = factory::build($fieldNames, $record);
                 }
 
             $count++;
