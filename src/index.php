@@ -69,7 +69,7 @@
 
 </main><!-- /.container -->
 
-<div>
+<div class="mx-auto" style="width: 75rem;">
     <?php
         include_once("classes.php");
         new main();
