@@ -320,6 +320,12 @@ class fileTest extends TestCase
             method_exists(record::class, '__construct')
         );
     }
+    public function testReturnArrayExists(): void{
+        $this->assertTrue(
+            method_exists(record::class, 'returnArray')
+        );
+    }
+
 
 
     //generic tests
