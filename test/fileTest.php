@@ -303,10 +303,21 @@ class fileTest extends TestCase
         );
     }
 
+
+
+
     //factory.php tests
     public function testBuildExists(): void{
         $this->assertTrue(
             method_exists(factory::class, 'build')
+        );
+    }
+
+
+    //record.php tests
+    public function test__ConstructExists(): void{
+        $this->assertTrue(
+            method_exists(record::class, '__construct')
         );
     }
 
