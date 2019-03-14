@@ -303,13 +303,7 @@ class fileTest extends TestCase
         );
     }
 
-    public function testGetHandle(): void{
-        $test = csvFunctions::getHandle('data\data.csv');
-        $this->assertTrue(
-            $test == csvFunctions::openFile('data\data.csv')
-
-        );
-    }
+    
 
 
 
