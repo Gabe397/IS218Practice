@@ -1,11 +1,12 @@
 <?php
-
+include "loops.php";
 /**
  * Created by PhpStorm.
  * User: gabe3
  * Date: 3/9/2019
  * Time: 3:15 AM
  */
+
 
 class main
 {
@@ -14,18 +15,18 @@ class main
     public function __construct()
     {
 
-        $arrayObjects = csv::getRecords("../data/data.csv");
+        $arrayObjects = File::readCSVIntoArray("../data/data.csv");
 
-        $keys = arrayFunctions::arrayKeys((array)$arrayObjects[0]);
+        $keys = ArrayFunctions::arrayKeys((array)$arrayObjects[0]);
 
-        $keyCount = arrayFunctions::arrayCount($keys);
+        $keyCount = ArrayFunctions::arrayCount($keys);
 
-        $numOfObjects = arrayFunctions::arrayCount($arrayObjects);
+        $numOfObjects = ArrayFunctions::arrayCount($arrayObjects);
 
         htmlTags::printBeginOfTable();
 
         for ($x = 0; $x < $keyCount; $x++) {
-            $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
+         $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
         }
 
         htmlTags::printRowEndBodyStartForTable();
@@ -39,7 +40,7 @@ class main
             }
 
             $this -> html.= htmlTags::tableRowEnd();
-        }
+       }
     }
 
     public function __destruct()
