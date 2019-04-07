@@ -11,6 +11,6 @@ abstract class recFactory
 {
     public static function Build($fieldName, $row)
     {
-        return ArrayFunctions::combineArray($fieldName, $row);
+        return arrayFunctions::combineArray($fieldName, $row);
     }
 }

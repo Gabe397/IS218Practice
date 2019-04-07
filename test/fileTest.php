@@ -9,13 +9,13 @@ declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
 
-class FileTest extends TestCase
+class fileTest extends TestCase
 {
 
     //These tests are for the htmlTags.php file and if they return the correct values
     public function testTableStart(): void{
         $this -> assertTrue(
-            htmlTags::tableStart() == '<table class="table">'
+            htmlTags::tableStart() == '<table class="table table-striped">'
         );
     }
 
@@ -183,51 +183,58 @@ class FileTest extends TestCase
     public function testCombineArray():void {
         $array1 = array(1,2,3);
         $array2 = array(4,5, 6);
-        $combinedArray = ArrayFunctions::combineArray($array1,$array2);
+        $combinedArray = arrayFunctions::combineArray($array1,$array2);
 
         $this -> assertTrue(
             $combinedArray[1] == 4 && $combinedArray[2] == 5 && $combinedArray[3] == 6, "Arrays are Combined"
         );
     }
+
     public function testInstantiateArray() :void
     {
-        $testArray = ArrayFunctions::instantiateArray();
+        $testArray = arrayFunctions::instantiateArray();
         $this -> assertIsArray(
             $testArray
         );
     }
+
     public function testArrayKeys() :void{
         $testArray = array("key1" => 1, "key2" => 2);
-        $keys = ArrayFunctions::arrayKeys($testArray);
+        $keys = arrayFunctions::arrayKeys($testArray);
 
 
         self::assertTrue(
             $keys[0] == "key1"
         );
     }
+
     public function testArrayCount():void{
         $testArray = array(1,2,3);
 
-        $this->assertEquals(3,ArrayFunctions::arrayCount($testArray));
+        $this->assertEquals(3,arrayFunctions::arrayCount($testArray));
     }
+
     public function testCombineArrayExists(): void{
         $this->assertTrue(
-            method_exists(ArrayFunctions::class,'combineArray')
+            method_exists(arrayFunctions::class,'combineArray')
         );
     }
+
     public function testInstantiateArrayExists(): void{
         $this->assertTrue(
-            method_exists(ArrayFunctions::class,'instantiateArray')
+            method_exists(arrayFunctions::class,'instantiateArray')
         );
     }
+
     public function testArrayKeysExist(): void{
         $this->assertTrue(
-            method_exists(ArrayFunctions::class,'arrayKeys')
+            method_exists(arrayFunctions::class,'arrayKeys')
         );
     }
+
     public function testArrayCountExists(): void{
         $this->assertTrue(
-            method_exists(ArrayFunctions::class,'arrayCount')
+            method_exists(arrayFunctions::class,'arrayCount')
         );
     }
 
@@ -235,22 +242,20 @@ class FileTest extends TestCase
 
 
 
-    //File.php tests
-    public function testReadCSVIntoArrayReturnsArray(): void{
-        $var = File::readCSVIntoArray("data/data.csv",'Car');
+    //csv.php tests
+    public function testGetRecords(): void{
+        $var = csv::getRecords("data/data.csv");
         $this-> assertTrue(
             gettype($var)==gettype(array())
         );
 
         print_r($var);
     }
-    public function testReadCSVIntoArrayExists(): void
-    {
+    public function testGetRecordsExists(): void{
         $this->assertTrue(
-            method_exists(File::class,'readCSVIntoArray')
+            method_exists(csv::class,'getRecords')
         );
     }
-
 
 
 
@@ -262,6 +267,7 @@ class FileTest extends TestCase
         );
 
     }
+
     public function testDestructExists(): void{
         $this -> assertTrue(
             method_exists(main::class,'__destruct')
@@ -269,44 +275,67 @@ class FileTest extends TestCase
     }
 
 
-
-
-
-
-
-
     //csvFunctions.php tests
-    public function testCSVOpenExists():void
+    public function testOpenFileExists():void
     {
         $this->assertTrue(
             method_exists(csvFunctions::class,'openFile')
         );
     }
-    public function testCSVRowExists():void
+
+    public function testGetRowExists():void
     {
         $this->assertTrue(
             method_exists(csvFunctions::class,'getCSVRow')
         );
     }
-    public function testCSVCloseExists():void
+
+    public function testCloseCSVExists():void
     {
         $this->assertTrue(
             method_exists(csvFunctions::class,'closeCSV')
         );
     }
 
+    public function testGetHandleExists(): void{
+        $this->assertTrue(
+            method_exists(csvFunctions::class,'getHandle')
+        );
+    }
 
 
 
 
+    //factory.php tests
+    public function testBuildExists(): void{
+        $this->assertTrue(
+            method_exists(factory::class, 'build')
+        );
+    }
 
+    //record.php tests
+    public function test__ConstructExists(): void{
+        $this->assertTrue(
+            method_exists(record::class, '__construct')
+        );
+    }
+    public function testReturnArrayExists(): void{
+        $this->assertTrue(
+            method_exists(record::class, 'returnArray')
+        );
+    }
+    public function testCreatePropertyExists(): void{
+        $this->assertTrue(
+            method_exists(record::class, 'createProperty')
+        );
+    }
 
 
     //generic tests
     public function testFileInstantiate(): void
     {
-        $file = new File();
-        $this-> assertInstanceOf(File::class,$file);
+        $file = new csv();
+        $this-> assertInstanceOf(csv::class,$file);
     }
 
     public function testCSVExists() :void
@@ -318,6 +347,8 @@ class FileTest extends TestCase
     {
         $this -> assertDirectoryExists('data');
     }
+
+
 
 
 

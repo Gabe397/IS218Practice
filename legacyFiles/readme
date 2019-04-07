@@ -1,0 +1,4 @@
+The files in this folder are ones that were created and used in the program before but are no longer needed.
+Some like file.php were integral to the code but were replaced with newer classes and more efficient/appropriate code.
+There are kept in here in case something goes wrong in the program in the future and we need to look back on it or
+if we just need to refer back to this code for a certain reason.

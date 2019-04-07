@@ -64,16 +64,22 @@
     </div>
 </nav>
 
+
 <main role="main" class="container">
 
 
 </main><!-- /.container -->
 
-<div>
+<div class="mx-auto" style="width: 75rem;">
     <?php
-        include_once ("Classes.php");
+        include_once("classes.php");
         new main();
     ?>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        Select image to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload Image" name="submit">
+    </form>
 
 </div>
 

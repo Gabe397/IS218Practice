@@ -23,5 +23,12 @@ class csvFunctions
         return fclose($handle);
     }
 
+    public static function getHandle($fileName)
+    {
+        $handle = csvFunctions::openFile($fileName);
+
+        return $handle;
+    }
+
 
 }

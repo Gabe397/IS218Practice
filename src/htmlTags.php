@@ -10,7 +10,7 @@ class htmlTags
 {
     public static function tableStart()
     {
-        return '<table class="table">';
+        return '<table class="table table-striped">';
     }
 
     public static function tableEnd()
