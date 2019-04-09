@@ -72,13 +72,13 @@
 
 <div class="mx-auto" style="width: 75rem;">
     <?php
-        include_once("classes.php");
+        require __DIR__ . '/../vendor/autoload.php';
         new main();
     ?>
     <form action="upload.php" method="post" enctype="multipart/form-data">
-        Select image to upload:
+        Select CSV to upload:
         <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
+        <input type="submit" value="Upload CSV" name="submit">
     </form>
 
 </div>
