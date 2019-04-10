@@ -17,4 +17,9 @@ class stringFunctions
     {
         return explode($boundStr,$inputStr);
     }
+
+    public static function stringBasename(string $path, string $suffix)
+    {
+        return basename($path,$suffix);
+    }
 }
