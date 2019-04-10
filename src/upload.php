@@ -1,8 +1,8 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 
-
 $currentDir = directoryFunctions::getCurrentDirectory();
+
 $uploadDirectory = directoryFunctions::uploadsDirectory();
 
 $errors = arrayFunctions::instantiateArray(); // Store all foreseen and unforseen errors here
@@ -11,7 +11,9 @@ $fileExtensions = ['csv','xlsx']; // Get all the file extensions
 
 $uploadFile = new upFile();
 
-$fileExtension = strtolower(end(explode('.',$uploadFile->getFileName()))); //Needs an exception.
+//$fileExtension = strtolower(end(explode('.',$uploadFile->getFileName()))); //Needs Exception
+$fileExtension = stringFunctions::stringLower(arrayFunctions::pointToEnd(stringFunctions::explodeString('.',$uploadFile->getFileName())));
+
 
 $uploadPath = $currentDir . $uploadDirectory . basename($uploadFile->getFileName());
 
@@ -38,7 +40,7 @@ if (isset($_POST['submit'])) {
             echo $error . "These are the errors" . "\n";
         }
     }
-}
+} //Abstract This
 
 
 
