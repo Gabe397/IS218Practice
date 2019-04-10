@@ -42,4 +42,9 @@ class upFile
         return $_FILES;
     }
 
+    public function moveFile($name, $path)
+    {
+        return move_uploaded_file($name,$path);
+    }
+
 }
