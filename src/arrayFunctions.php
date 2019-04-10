@@ -28,4 +28,9 @@ class arrayFunctions
         return count($list);
     }
 
+    public static function pointToEnd(array $list)
+    {
+        return end($list);
+    }
+
 }
