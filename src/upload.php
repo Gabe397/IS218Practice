@@ -26,10 +26,10 @@ if (isset($_POST['submit'])) {
     }
 
     if (empty($errors)) {
-        $didUpload = move_uploaded_file($uploadFile->getFileTmpName(), $uploadPath);
+        $didUpload = $uploadFile->moveFile($uploadFile->getFileTmpName(), $uploadPath);
 
         if ($didUpload) {
-            echo "The file " . basename($uploadFile->getFileName()) . " has been uploaded";
+            echo "The file " . stringFunctions::stringBasename($uploadFile->getFileName() , '.') . " has been uploaded";
         } else {
             echo "An error occurred somewhere. Try again or contact the admin";
         }
