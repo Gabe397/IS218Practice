@@ -33,9 +33,10 @@ if (isset($_POST['submit'])) {
         } else {
             echo "An error occurred somewhere. Try again or contact the admin";
         }
-    } else {
-        foreach ($errors as $error) {
-            echo $error . "These are the errors" . "\n";
+    }
+    else {
+        foreach ($errors as $key => $val) {
+            echo $val;
         }
     }
 } //Abstract This
