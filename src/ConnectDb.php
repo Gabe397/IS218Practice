@@ -12,16 +12,16 @@ class ConnectDb {
     private static $instance = null;
     private $conn;
 
-    private $host = '127.0.0.1';
-    private $user = 'user-name';
-    private $pass = 'password';
-    private $name = 'db name';
+    private $host = 'sql.njit.edu';
+    private $user = 'vs598';
+    private $pass = 'plenary39';
+    private $name = 'vs598';
 
     // The db connection is established in the private constructor.
     private function __construct()
     {
         $this->conn = new PDO("mysql:host={$this->host};
-    dbname={$this->name}", $this->user,'password',
+    dbname={$this->name}", $this->user,'plenary39',
             array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
     }
 
