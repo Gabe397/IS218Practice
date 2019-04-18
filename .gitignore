@@ -63,3 +63,5 @@ typings/
 /vendor/
 
 .idea
+
+data/database.sqlite
