@@ -12,30 +12,41 @@ class csvToDatabase
 
     public function __construct()
     {
+        $table = "TUTORIAL2"; //change name maybe autoincrement
         //change so we put the file that the person uploads
-        $arrayObjects = csv::getRecords("../data/data.csv");
-        $keys = arrayFunctions::arrayKeys((array)$arrayObjects[0]);
 
+        $arrayObjects = csv::getRecords("../data/data.csv");
+
+        $numOfObjects = arrayFunctions::arrayCount($arrayObjects);
+
+        $keys = arrayFunctions::arrayKeys((array)$arrayObjects[0]);
 
         $columnStatement = sqliteFunctions::createColumnsString($keys);
 
-        //Creates the header must modify using $arrayObjects
-        $table = "TUTORIAL16"; //change name maybe autoincrement
+        $headerInsert = sqliteFunctions::createInsertHeadersString($keys);
+
+        $valuesInsert = sqliteFunctions::createInsertValues($keys);
+
 
         try {
             $pdo = (new SQLiteConnection())->connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//Error Handling
-            $stmt = "CREATE table $table(
-            ID INTEGER PRIMARY KEY AUTOINCREMENT,
-            $columnStatement );";//Modify With Variables for Column
+            $stmt = "CREATE table $table(ID INTEGER PRIMARY KEY AUTOINCREMENT, $columnStatement);";
             $pdo->exec($stmt);
-
 
             //Insertion Must modify for dynamic variables from $arrayObjects and multiple row insertion
 
-            $stmt = "INSERT INTO $table (first_name, last_name) VALUES (:name, :surname)";
+
+
+            $stmt = "INSERT INTO $table ($headerInsert) VALUES ($valuesInsert)";
             $stmt = $pdo->prepare($stmt);
-            $stmt->execute($arrayObjects);
+            for($x = 0 ; $x<$numOfObjects; $x++)
+            {
+                $data = (array) $arrayObjects[$x];
+                $stmt->execute($data);
+            }
+
+
 
 
             //Selecting Data Needs word must be different function maybe? Also must be dynamic
@@ -43,10 +54,9 @@ class csvToDatabase
             $stmt->execute();
             $user = $stmt->fetch();
 
-            var_dump($keys);
 
 
-            print("<br> <br> Created $table Table.\n");
+            print("Created $table Table.\n");
 
         } catch (PDOException $e) {
             echo $e->getMessage();//Remove or change message in production code

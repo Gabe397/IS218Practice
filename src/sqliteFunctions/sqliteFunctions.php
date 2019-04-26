@@ -6,6 +6,8 @@
  * Time: 1:20 PM
  */
 
+
+
 class sqliteFunctions
 {
     public static function createColumnsString($keys): string
@@ -18,14 +20,14 @@ class sqliteFunctions
             if($i<$keysCount-1)
             {
                 $holder = $keys[$i];
-                $returnString .= " $holder TEXT NOT NULL,";
+                $returnString .= "$holder TEXT,";
 
             }
 
             else
             {
                 $holder = $keys[$i];
-                $returnString .= " $holder TEXT NOT NULL";
+                $returnString .= "$holder TEXT";
             }
         }
 
@@ -33,10 +35,46 @@ class sqliteFunctions
 
     }
 
-    public static function createInsertString():string
+    public static function createInsertHeadersString($keys):string
     {
+        $returnString = "";
+        $keysCount = arrayFunctions::arrayCount($keys);
+        for($i=0; $i<$keysCount; $i++)
+        {
+            if($i<$keysCount-1)
+            {
+                $returnString .= "$keys[$i],";
+            }
 
+            else
+            {
+                $returnString .= "$keys[$i]";;
+            }
+
+        }
+        return $returnString;
+    }
+
+    public static function createInsertValues($keys):string
+    {
+        $returnString = "";
+        $keysCount = arrayFunctions::arrayCount($keys);
+        for($i=0; $i<$keysCount; $i++)
+        {
+            if($i<$keysCount-1)
+            {
+                $returnString .= ":$keys[$i],";
+            }
+
+            else
+            {
+                $returnString .= ":$keys[$i]";;
+            }
+
+        }
+        return $returnString;
     }
 }
+
 
 
