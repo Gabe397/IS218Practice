@@ -1,10 +1,11 @@
-"Name","LastName","Address","City","State","ZipCode"
-John,Doe,120 jefferson st.,Riverside, NJ, 08075
+"Name","Surname","Address","City","State","ZipCode"
+John,Doe,120 jefferson st.,Riverside, NJ,08075
 Jack,McGinnis,220 hobo Av.,Phila, PA,09119
-"John ""Da Man""",Repici,120 Jefferson St.,Riverside, NJ,08075
-Stephen,Tyler,"7452 Terrace ""At the Plaza"" road",SomeTown,SD, 91234
-<<<<<<< HEAD
-,Blankman,,SomeTown, SD, 00298
-"Joan ""the bone"", Anne",Jet,"9th, at Terrace plc",Desert City,CO,00123
-=======
->>>>>>> .
+Stephen,Tyler,7452 Terrace,Monopoly, CA, 03123
+Mike,Roe,135 Lincoln st.,Bergenfield, NJ,08015
+Jack,Old,256 Bobton.,Huntington,PA,00011
+Billy,Mandy,74 Grim Street,Halloween Town,Maine,91234
+Jon, Snow, Winterfell, North, Westoros, 00921
+Walter, White, Blue Skies St, Albuquerque, NM, 27390
+Tony, Stark, 81 st , NY, NY, 00001
+
