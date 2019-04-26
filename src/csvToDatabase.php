@@ -12,7 +12,7 @@ class csvToDatabase
 
     public function __construct()
     {
-        $table = "TUTORIAL2"; //change name maybe autoincrement
+        $table = "TUTORIAL6"; //change name maybe autoincrement
         //change so we put the file that the person uploads
 
         $arrayObjects = csv::getRecords("../data/data.csv");
@@ -34,10 +34,6 @@ class csvToDatabase
             $stmt = "CREATE table $table(ID INTEGER PRIMARY KEY AUTOINCREMENT, $columnStatement);";
             $pdo->exec($stmt);
 
-            //Insertion Must modify for dynamic variables from $arrayObjects and multiple row insertion
-
-
-
             $stmt = "INSERT INTO $table ($headerInsert) VALUES ($valuesInsert)";
             $stmt = $pdo->prepare($stmt);
             for($x = 0 ; $x<$numOfObjects; $x++)
@@ -46,13 +42,11 @@ class csvToDatabase
                 $stmt->execute($data);
             }
 
-
-
-
             //Selecting Data Needs word must be different function maybe? Also must be dynamic
             $stmt = $pdo->prepare("SELECT * FROM $table");
             $stmt->execute();
             $user = $stmt->fetch();
+
 
 
 
