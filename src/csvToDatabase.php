@@ -14,27 +14,28 @@ class csvToDatabase
     {
         //change so we put the file that the person uploads
         $arrayObjects = csv::getRecords("../data/data.csv");
+        $keys = arrayFunctions::arrayKeys((array)$arrayObjects[0]);
 
-            //Creates the header must modify using $arrayObjects
-        $table = "TUTORIAL7"; //change name maybe autoincrement
+
+        $columnStatement = sqliteFunctions::createColumnsString($keys);
+
+        //Creates the header must modify using $arrayObjects
+        $table = "TUTORIAL16"; //change name maybe autoincrement
+
         try {
             $pdo = (new SQLiteConnection())->connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//Error Handling
             $stmt = "CREATE table $table(
             ID INTEGER PRIMARY KEY AUTOINCREMENT,
-            first_name TEXT NOT NULL,
-            last_name TEXT NOT NULL);";//Modify With Variables for Column
+            $columnStatement );";//Modify With Variables for Column
             $pdo->exec($stmt);
 
 
             //Insertion Must modify for dynamic variables from $arrayObjects and multiple row insertion
-            $data = [
-                'name' => "try",
-                'surname' => "hello",
-            ];
+
             $stmt = "INSERT INTO $table (first_name, last_name) VALUES (:name, :surname)";
             $stmt = $pdo->prepare($stmt);
-            $stmt->execute($data);
+            $stmt->execute($arrayObjects);
 
 
             //Selecting Data Needs word must be different function maybe? Also must be dynamic
@@ -42,7 +43,7 @@ class csvToDatabase
             $stmt->execute();
             $user = $stmt->fetch();
 
-            var_dump($user);
+            var_dump($keys);
 
 
             print("<br> <br> Created $table Table.\n");
