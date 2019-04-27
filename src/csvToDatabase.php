@@ -47,7 +47,7 @@ class csvToDatabase
             $stmt->execute();
             $user = $stmt->fetch();
 
-
+            var_dump($user);
 
 
             print("Created $table Table.\n");
