@@ -40,5 +40,4 @@ class csv
         }
         return $recordArray;
     }
-
 }
