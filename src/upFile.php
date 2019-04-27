@@ -46,5 +46,4 @@ class upFile
     {
         return move_uploaded_file($name,$path);
     }
-
 }

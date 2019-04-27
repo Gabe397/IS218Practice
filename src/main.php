@@ -30,7 +30,6 @@ class main
 
         htmlTags::printRowEndBodyStartForTable();
 
-
         for ($y = 0; $y < $numOfObjects; $y++) {
             $this ->html .= htmlTags::tableRowStart();
             for ($z = 0; $z < $keyCount ; $z++) {

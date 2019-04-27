@@ -12,7 +12,7 @@ class csvToDatabase
 
     public function __construct()
     {
-        $table = "TUTORIAL6"; //change name maybe autoincrement
+        $table = "TUTORIAL9"; //change name maybe autoincrement
         //change so we put the file that the person uploads
 
         $arrayObjects = csv::getRecords("../data/data.csv");

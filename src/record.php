@@ -16,9 +16,7 @@ class record
         {
             $this -> createProperty($property,$value);
         }
-
     }
-
     public function returnArray()
     {
         $array = (array) $this ;
