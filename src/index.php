@@ -17,7 +17,6 @@
             -ms-user-select: none;
             user-select: none;
         }
-
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -72,18 +71,13 @@
 
 <div class="mx-auto" style="width: 75rem;">
     <?php
-        require __DIR__ . '/../vendor/autoload.php';
-        new main();
-
-
+    require __DIR__ . '/../vendor/autoload.php';
+    new main();
     $pdo = (new SQLiteConnection())->connect();//how to connect
     if ($pdo != null) //check if connected
         echo 'Connected to the SQLite database successfully!';
     else
         echo 'Whoops, could not connect to the SQLite database!';
-
-
-
     ?>
 
 
