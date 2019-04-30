@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
+
 $uploadFile = new upFile();
 $fileExtensions = ['csv','xlsx']; // Get all the file extensions
 $currentDir = directoryFunctions::getCurrentDirectory();
@@ -37,6 +38,12 @@ if (isset($_POST['submit'])) {
 
     <input type="Submit" value="Back" name="submit">
 </form>
+
+<?php
+if (empty($errors)){
+    new csvToDatabase();
+}
+?>
 
 </body>
 </html>
