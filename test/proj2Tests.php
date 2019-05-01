@@ -21,4 +21,9 @@ class proj2Tests extends TestCase
             method_exists(stringFunctions::class, "explodeString")
         );
     }
+    public function testStringBaseNameExists(){
+        $this -> assertTrue(
+            method_exists(stringFunctions::class, "stringBasename")
+        );
+    }
 }
