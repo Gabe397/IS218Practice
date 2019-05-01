@@ -26,4 +26,11 @@ class proj2Tests extends TestCase
             method_exists(stringFunctions::class, "stringBasename")
         );
     }
+
+    public function testStringLower(){
+        $test = new stringFunctions();
+        $this -> assertTrue(
+        $test::stringLower("HELLO") == "hello"
+        );
+    }
 }
