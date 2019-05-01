@@ -45,6 +45,9 @@ class csvToDatabase
             $stmt->execute();
             $user = $stmt->fetch();
 
+
+            print("Created $table Table.\n");
+
         } catch (PDOException $e) {
             echo $e->getMessage();//Remove or change message in production code
         }
