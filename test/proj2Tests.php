@@ -40,4 +40,11 @@ class proj2Tests extends TestCase
         );
     }
 
+
+    public function testConfig(){
+        $this -> assertTrue(
+            class_exists("config")
+        );
+    }
+
 }
