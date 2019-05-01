@@ -52,4 +52,10 @@ class proj2Tests extends TestCase
         );
     }
 
+    public function testSQLiteConnectionExists(){
+        $this -> assertTrue(
+          class_exists("SQLiteConnection")
+        );
+    }
+    
 }
