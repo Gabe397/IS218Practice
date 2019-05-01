@@ -24,4 +24,6 @@ class record
     {
         $this -> {$column} = $rowEntry;
     }
+
+
 }
