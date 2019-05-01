@@ -10,7 +10,7 @@ require __DIR__ . '/../vendor/autoload.php';
 class csvToDatabase
 {
 
-    public function __construct()
+    public function __construct($uploadPath)
     {
         $table = sqliteFunctions::generateRandomTableName(10);
 
@@ -58,5 +58,3 @@ class csvToDatabase
 
     }
 }
-
-new csvToDatabase();

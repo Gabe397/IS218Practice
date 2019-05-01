@@ -50,7 +50,17 @@ if (isset($_POST['submit'])) {
     <input type="Submit" value="Back" name="submit">
 </form>
 
+
+<?php
+if (empty($errors)){
+    new csvToDatabase($uploadPath);
+}
+?>
+
+
+
 </body>
 </html>
+
 
 
