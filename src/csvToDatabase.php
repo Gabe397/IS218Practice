@@ -11,7 +11,7 @@ class csvToDatabase
     public function __construct($x)
     {
 
-        $table = "TABLE1"; //Creates random has value for name of database
+        $table = sqliteFunctions::generateRandomTableName(10); //Creates random has value for name of database
 
         //change so we put the file that the person uploads
 
@@ -44,7 +44,7 @@ class csvToDatabase
             $stmt = $pdo->prepare("SELECT * FROM $table");
             $stmt->execute();
             $user = $stmt->fetch();
-            var_dump($user);
+
         } catch (PDOException $e) {
             echo $e->getMessage();//Remove or change message in production code
         }
