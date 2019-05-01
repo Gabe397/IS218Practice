@@ -15,5 +15,4 @@ class factory
         return $record;
     }
 
-
 }
