@@ -33,4 +33,11 @@ class proj2Tests extends TestCase
         $test::stringLower("HELLO") == "hello"
         );
     }
+    public function testExplodeString(){
+        $test = new stringFunctions();
+        $this -> assertTrue(
+            $test::explodeString("this", "this is it. This is now") == explode("this", "this is it. This is now")
+        );
+    }
+
 }
