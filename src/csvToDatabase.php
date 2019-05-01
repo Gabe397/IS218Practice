@@ -12,8 +12,7 @@ class csvToDatabase
 
     public function __construct()
     {
-        $table = "TUTORIAL9"; //change name maybe autoincrement
-        //change so we put the file that the person uploads
+        $table = sqliteFunctions::generateRandomTableName(10);
 
         $arrayObjects = csv::getRecords("../data/data.csv");
 
