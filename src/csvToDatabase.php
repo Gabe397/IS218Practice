@@ -11,7 +11,7 @@ class csvToDatabase
     public function __construct($x)
     {
 
-        $table = bin2hex(random_bytes(16)); //Creates random has value for name of database
+        $table = "TABLE1"; //Creates random has value for name of database
 
         //change so we put the file that the person uploads
 
