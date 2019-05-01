@@ -11,6 +11,11 @@ use PHPUnit\Framework\TestCase;
 
 class proj2Tests extends TestCase
 {
+    public function testStringFunctionsExists(){
+        $this -> assertTrue(
+         class_exists("stringFunctions")
+         );
+    }
     public function testStringLowerExists(){
         $this -> assertTrue(
             method_exists(stringFunctions::class, "stringLower")
