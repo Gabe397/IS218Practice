@@ -46,7 +46,7 @@ class proj2Tests extends TestCase
     }
 
 
-    public function testConfig(){
+    public function testConfigExists(){
         $this -> assertTrue(
             class_exists("config")
         );
