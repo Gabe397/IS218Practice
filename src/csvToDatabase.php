@@ -8,12 +8,14 @@
 require __DIR__ . '/../vendor/autoload.php';
 class csvToDatabase
 {
-    public function __construct()
+    public function __construct($x)
     {
-        $table = "TUTORIAL6"; //change name maybe autoincrement
+
+        $table = "TUTORIAL9"; //change name maybe autoincrement
 
         //change so we put the file that the person uploads
-        $arrayObjects = csv::getRecords("../data/data.csv");
+
+        $arrayObjects = csv::getRecords($x);
 
         $numOfObjects = arrayFunctions::arrayCount($arrayObjects);
 
@@ -49,4 +51,3 @@ class csvToDatabase
         }
     }
 }
-new csvToDatabase();

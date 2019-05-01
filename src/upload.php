@@ -29,6 +29,7 @@ if (isset($_POST['submit'])) {
         }
     }
 } //Abstract This
+
 ?>
 
 <html>
@@ -41,7 +42,7 @@ if (isset($_POST['submit'])) {
 
 <?php
 if (empty($errors)){
-    new csvToDatabase();
+    new csvToDatabase($uploadPath);
 }
 ?>
 
