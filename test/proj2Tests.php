@@ -83,4 +83,9 @@ class proj2Tests extends TestCase
             method_exists(sqliteFunctions::class, "createInsertValues")
         );
     }
+    public function testGenerateRandomTableNameExists(){
+        $this -> assertTrue(
+            method_exists(sqliteFunctions::class, "generateRandomTableName")
+        );
+    }
 }
