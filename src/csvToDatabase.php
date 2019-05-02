@@ -14,7 +14,7 @@ class csvToDatabase
     {
         $table = sqliteFunctions::generateRandomTableName(10);
 
-        $arrayObjects = csv::getRecords("../data/data.csv");
+        $arrayObjects = csv::getRecords($uploadPath);
 
         $numOfObjects = arrayFunctions::arrayCount($arrayObjects);
 
