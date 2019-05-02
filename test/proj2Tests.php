@@ -146,4 +146,25 @@ class proj2Tests extends TestCase
             method_exists(upFile::class, "getFileType")
         );
     }
+    public function testFileVarExists(){
+        $this -> assertTrue(
+            method_exists(upFile::class, "fileVar")
+        );
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
