@@ -73,4 +73,9 @@ class proj2Tests extends TestCase
             method_exists(sqliteFunctions::class, "createColumnsString")
         );
     }
+    public function testCreateInsertHeadersStringExists(){
+        $this -> assertTrue(
+            method_exists(sqliteFunctions::class, "createInsertHeadersString")
+        );
+    }
 }
