@@ -121,5 +121,11 @@ class proj2Tests extends TestCase
         );
     }
 
+    public function testUpFileExists(){
+        $this -> assertTrue(
+          class_exists("upFile")
+        );
+    }
+
 
 }
