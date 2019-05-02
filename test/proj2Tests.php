@@ -88,4 +88,10 @@ class proj2Tests extends TestCase
             method_exists(sqliteFunctions::class, "generateRandomTableName")
         );
     }
+
+    public function testDirectoryFunctionsExists(){
+        $this ->asserttrue(
+            class_exists("directoryFunctions")
+        );
+    }
 }
