@@ -11,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 class proj2Tests extends TestCase
 {
+    //stringFunctions.php Tests
     public function testStringFunctionsExists(){
         $this -> assertTrue(
          class_exists("stringFunctions")
@@ -31,7 +32,6 @@ class proj2Tests extends TestCase
             method_exists(stringFunctions::class, "stringBasename")
         );
     }
-
     public function testStringLower(){
         $test = new stringFunctions();
         $this -> assertTrue(
@@ -45,13 +45,14 @@ class proj2Tests extends TestCase
         );
     }
 
-
+    //config.php test
     public function testConfigExists(){
         $this -> assertTrue(
             class_exists("config")
         );
     }
 
+    //SQLiteConnection.php tests
     public function testSQLiteConnectionExists(){
         $this -> assertTrue(
           class_exists("SQLiteConnection")
@@ -63,6 +64,7 @@ class proj2Tests extends TestCase
         );
     }
 
+    //sqliteFunctions.php tests
     public function testSqliteFunctionsExists(){
         $this -> assertTrue(
           class_exists("sqliteFunctions")
@@ -89,6 +91,7 @@ class proj2Tests extends TestCase
         );
     }
 
+    //directoryFunctions.php tests
     public function testDirectoryFunctionsExists(){
         $this ->asserttrue(
             class_exists("directoryFunctions")
@@ -110,6 +113,7 @@ class proj2Tests extends TestCase
         );
     }
 
+    //csvToDatabase.php tests
     public function testCsvToDatabaseExists(){
         $this -> assertTrue(
           class_exists("csvToDatabase")
@@ -121,6 +125,7 @@ class proj2Tests extends TestCase
         );
     }
 
+    //upFile.php tests
     public function testUpFileExists(){
         $this -> assertTrue(
           class_exists("upFile")
