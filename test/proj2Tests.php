@@ -109,4 +109,11 @@ class proj2Tests extends TestCase
             directoryFunctions::uploadsDirectory() == "/uploads/"
         );
     }
+
+    public function testCsvToDatabaseExists(){
+        $this -> assertTrue(
+          class_exists("csvToDatabase")
+        );
+    }
+
 }
