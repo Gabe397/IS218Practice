@@ -8,11 +8,11 @@
 require __DIR__ . '/../vendor/autoload.php';
 class csvToDatabase
 {
-    public function __construct()
+    public function __construct($uploadPath)
     {
         require __DIR__ . '/../vendor/autoload.php';
         //change so we put the file that the person uploads
-        $arrayObjects = csv::getRecords("../data/data.csv");
+        $arrayObjects = csv::getRecords($uploadPath);
         //Creates the header must modify using $arrayObjects
         $table = "TUTORIAL15"; //change name maybe autoincrement
         try {
