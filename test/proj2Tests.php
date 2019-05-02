@@ -99,4 +99,10 @@ class proj2Tests extends TestCase
           method_exists(directoryFunctions::class, "getCurrentDirectory")
         );
     }
+    public function testUploadsDirectoryExists(){
+        $this -> assertTrue(
+            method_exists(directoryFunctions::class, "uploadsDirectory")
+        );
+    }
+    
 }
