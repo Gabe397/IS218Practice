@@ -62,5 +62,10 @@ class proj2Tests extends TestCase
           method_exists(SQLiteConnection::class, "connect")
         );
     }
-    
+
+    public function testSqliteFunctionsExists(){
+        $this -> assertTrue(
+          class_exists("sqliteFunctions")
+        );
+    }
 }
