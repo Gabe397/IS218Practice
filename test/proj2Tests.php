@@ -115,5 +115,11 @@ class proj2Tests extends TestCase
           class_exists("csvToDatabase")
         );
     }
+    public function testPullExists(){
+        $this -> assertTrue(
+          method_exists(csvToDatabase::class, "pull")
+        );
+    }
+
 
 }
