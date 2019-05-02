@@ -126,6 +126,11 @@ class proj2Tests extends TestCase
           class_exists("upFile")
         );
     }
+    public function testGetFileNameExists(){
+        $this -> assertTrue(
+          method_exists(upFile::class, "getFileName")
+        );
+    }
 
 
 }
