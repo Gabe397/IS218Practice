@@ -1,8 +1,8 @@
 {
     "name": "gabe3/is218practice",
     "require": {
-        "phpunit/phpunit": "^8.0",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "ext-mysqli": "*"
     },
     "autoload": {
         "classmap": [
