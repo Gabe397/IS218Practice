@@ -68,4 +68,9 @@ class proj2Tests extends TestCase
           class_exists("sqliteFunctions")
         );
     }
+    public function testCreateColumnsStringExists(){
+        $this -> assertTrue(
+            method_exists(sqliteFunctions::class, "createColumnsString")
+        );
+    }
 }
