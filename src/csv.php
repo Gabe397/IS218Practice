@@ -9,6 +9,7 @@
 class csv
 {
     static public function getRecords($fileName){
+
         $file = csvFunctions::openFile($fileName);
 
         $fieldNames = arrayFunctions::instantiateArray();

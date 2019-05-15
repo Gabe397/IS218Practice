@@ -9,7 +9,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 class csvToDatabase
 {
-
+    public $html;
     public function __construct($uploadPath)
     {
         $table = sqliteFunctions::generateRandomTableName(10);
@@ -44,12 +44,37 @@ class csvToDatabase
             //Selecting Data Needs word must be different function maybe? Also must be dynamic
             $stmt = $pdo->prepare("SELECT * FROM $table");
             $stmt->execute();
-            $user = $stmt->fetch();
+            $user = $stmt->fetchObject();
+
+            $array = json_decode(json_encode($user), true);
+            $arrayObjects = $array;
+            $keys = arrayFunctions::arrayKeys((array)$arrayObjects[0]);
+
+            $keyCount = arrayFunctions::arrayCount($keys);
+
+            $numOfObjects = arrayFunctions::arrayCount($arrayObjects);
+
+            htmlTags::printBeginOfTable();
+
+            for ($x = 0; $x < $keyCount; $x++) {
+                $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
+            }
+
+            htmlTags::printRowEndBodyStartForTable();
+
+            for ($y = 0; $y < $numOfObjects; $y++) {
+                $this ->html .= htmlTags::tableRowStart();
+                for ($z = 0; $z < $keyCount ; $z++) {
+                    $hold = $keys[$z];
+                    $this->html .= htmlTags::rowEntry(($arrayObjects[$y]->$hold));
+                }
+
+                $this -> html.= htmlTags::tableRowEnd();
+            }
 
 
 
 
-            print("Created $table Table.\n");
 
         } catch (PDOException $e) {
             echo $e->getMessage();//Remove or change message in production code
@@ -57,5 +82,14 @@ class csvToDatabase
 
 
 
+
     }
+
+
+
+
+
+
 }
+
+
