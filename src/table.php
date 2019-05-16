@@ -75,21 +75,21 @@
     <?php
         require __DIR__ . '/../vendor/autoload.php';
 
-
         $queries = array();
         parse_str($_SERVER['QUERY_STRING'], $queries);
 
         $uploadPath =  $queries['uploadPath'];
 
-
         new csvToDatabase($uploadPath);
     ?>
 
-
 </div>
+
 <form action="index.php" method="post" enctype="multipart/form-data">
-    <input type="button" value="Back to Upload">
+
+    <input type="Submit" value="Back" name="submit">
 </form>
+
 
 <div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -16,6 +16,7 @@ class main
 
         $arrayObjects = $masterArray;
 
+
         //$keys = arrayFunctions::arrayKeys((array)$arrayObjects[0]);
 
         $keyCount = arrayFunctions::arrayCount($keys);
@@ -23,6 +24,8 @@ class main
         $numOfObjects = arrayFunctions::arrayCount($arrayObjects);
 
         htmlTags::printBeginOfTable();
+
+        $this ->html .= htmlTags::tHeaderColumn('id');
 
         for ($x = 0; $x < $keyCount; $x++) {
             $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
@@ -32,13 +35,14 @@ class main
 
         for ($y = 0; $y < $numOfObjects; $y++) {
             $this ->html .= htmlTags::tableRowStart();
-            for ($z = 0; $z < $keyCount ; $z++) {
-                $hold = $keys[$z];
-                $this->html .= htmlTags::rowEntry(($arrayObjects[$y]->$hold));
+            for ($z = 0; $z < $keyCount+1 ; $z++) {
+                $this->html .= htmlTags::rowEntry($masterArray[$y][$z]);;
             }
 
             $this -> html.= htmlTags::tableRowEnd();
         }
+
+
     }
 
     public function __destruct()

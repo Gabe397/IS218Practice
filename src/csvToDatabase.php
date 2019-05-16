@@ -9,9 +9,12 @@ require __DIR__ . '/../vendor/autoload.php';
 
 class csvToDatabase
 {
+    private $html;
+
 
     public function __construct($uploadPath)
     {
+
         $table = sqliteFunctions::generateRandomTableName(10);
 
         $arrayObjects = csv::getRecords($uploadPath);
@@ -41,31 +44,30 @@ class csvToDatabase
                 $stmt->execute($data);
             }
 
-            //Selecting Data Needs word must be different function maybe? Also must be dynamic
+
+
             $stmt = $pdo->prepare("SELECT * FROM $table");
             $stmt->execute();
 
-
-
-            $masterArray = [];
+            $starterArray = [];
             $numOfRows = arrayFunctions::arrayCount($arrayObjects);
             for($x=0;$x<$numOfRows;$x++){
                 $user = $stmt->fetch();
                 $value = $user;
-                array_push($masterArray, $value);
+                array_push($starterArray, $value);
             }
-            $masterArray2 = $masterArray + array(null);
-            print_r(count($masterArray2));
+            $masterArray = $starterArray + array(null);
 
 
-            $finalTable = new main($keys,$masterArray2);
+            new main($keys,$masterArray);
 
 
 
-            return $finalTable;
+        }
 
 
-        } catch (PDOException $e) {
+
+        catch (PDOException $e) {
             echo $e->getMessage();//Remove or change message in production code
         }
 
@@ -73,10 +75,6 @@ class csvToDatabase
 
 
     }
-
-
-
-
 
 
 }

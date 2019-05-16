@@ -15,8 +15,6 @@ $fileExtension = stringFunctions::stringLower(arrayFunctions::pointToEnd(stringF
 
 $uploadPath = $currentDir . $uploadDirectory . stringFunctions::stringBasename($uploadFile->getFileName(),'.');
 
-var_dump($uploadPath);
-
 if (isset($_POST['submit'])) {
 
     if (! in_array($fileExtension,$fileExtensions)) {
@@ -52,7 +50,6 @@ if (isset($_POST['submit'])) {
     <input type="Submit" value="Back" name="submit">
 </form>
 
-<input type='hidden' name='var' value='<?php echo "$uploadPath";?>'/>
 
 <?php if(empty($errors)) :
 
