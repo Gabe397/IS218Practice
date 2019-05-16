@@ -11,12 +11,12 @@ class main
 {
     private $html;
 
-    public function __construct()
+    public function __construct($keys, $masterArray)
     {
 
-        $arrayObjects = csv::getRecords("../data/data.csv");
+        $arrayObjects = $masterArray;
 
-        $keys = arrayFunctions::arrayKeys((array)$arrayObjects[0]);
+        //$keys = arrayFunctions::arrayKeys((array)$arrayObjects[0]);
 
         $keyCount = arrayFunctions::arrayCount($keys);
 

@@ -60,6 +60,8 @@ class csvToDatabase
 
 
 
+
+
         } catch (PDOException $e) {
             echo $e->getMessage();//Remove or change message in production code
         }
