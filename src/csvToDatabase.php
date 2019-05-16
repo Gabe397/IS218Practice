@@ -9,7 +9,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 class csvToDatabase
 {
-    public $html;
+
     public function __construct($uploadPath)
     {
         $table = sqliteFunctions::generateRandomTableName(10);
@@ -44,34 +44,22 @@ class csvToDatabase
             //Selecting Data Needs word must be different function maybe? Also must be dynamic
             $stmt = $pdo->prepare("SELECT * FROM $table");
             $stmt->execute();
-            $user = $stmt->fetchObject();
 
-            $array = json_decode(json_encode($user), true);
-            $arrayObjects = $array;
-            $keys = arrayFunctions::arrayKeys((array)$arrayObjects[0]);
 
-            $keyCount = arrayFunctions::arrayCount($keys);
 
-            $numOfObjects = arrayFunctions::arrayCount($arrayObjects);
+            $masterArray = [];
 
-            htmlTags::printBeginOfTable();
-
-            for ($x = 0; $x < $keyCount; $x++) {
-                $this ->html .= htmlTags::tHeaderColumn($keys[$x]);
-            }
-
-            htmlTags::printRowEndBodyStartForTable();
-
-            for ($y = 0; $y < $numOfObjects; $y++) {
-                $this ->html .= htmlTags::tableRowStart();
-                for ($z = 0; $z < $keyCount ; $z++) {
-                    $hold = $keys[$z];
-                    $this->html .= htmlTags::rowEntry(($arrayObjects[$y]->$hold));
+            while(True){
+                $user = $stmt->fetch();
+                if(count($user)==0){
+                    break;
                 }
-
-                $this -> html.= htmlTags::tableRowEnd();
+                $value = $user;
+                array_push($masterArray, $value);
             }
 
+            $masterArray2 = $masterArray + array(null);
+            print_r(count($masterArray2));
 
 
 
