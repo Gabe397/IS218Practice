@@ -58,8 +58,11 @@ class csvToDatabase
             print_r(count($masterArray2));
 
 
+            $finalTable = new main($keys,$masterArray2);
 
 
+
+            return $finalTable;
 
 
         } catch (PDOException $e) {
