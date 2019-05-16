@@ -49,14 +49,16 @@ class csvToDatabase
 
             $masterArray = [];
 
-            while(True){
+            /*while(True){
                 $user = $stmt->fetch();
                 if(count($user)==0){
                     break;
                 }
                 $value = $user;
                 array_push($masterArray, $value);
-            }
+            }*/
+
+
 
             $masterArray2 = $masterArray + array(null);
             print_r(count($masterArray2));
